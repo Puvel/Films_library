@@ -1,0 +1,105 @@
+.gallery_list {
+  padding-bottom: 32px;
+}
+
+.gallery-list__item {
+  width: 280px;
+}
+
+.gallery-list__item:not(:last-child) {
+  padding-bottom: 20px;
+}
+
+.gallery-list__item_image {
+  padding-bottom: 12px;
+  transition: all .2s ease-in-out;
+}
+
+.gallery-list__item_image:hover {
+    transform: scale(1.07);
+}
+
+.gallery-list__item_link {
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  color: var(--main-decoration-color);
+  font-weight: 700;
+}
+
+.gallery-list__item_title {
+  text-transform: uppercase;
+  color: var(--main-dark-color);
+  font-size: var(--main-font-size);
+  font-family: var(--main-font);
+  font-weight: medium;
+}
+
+.filmInfo {
+  display: flex;
+  flex-wrap: wrap;
+  width: 280px;
+
+}
+
+.filmInfo__genre-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 6px;
+}
+
+
+.filmInfo__slash,
+.filmInfo__year {
+  margin-right: 6px;
+}
+
+.filmInfo__slash {
+    margin-left: 6px;
+}
+
+.filmInfo__popularity {
+  width: 36px;
+  background-color: var(--main-decoration-color);
+  color: var(--main-light-color);
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    width: 620px;
+  }
+
+  .gallery_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 54px;
+  }
+
+  .gallery-list__item {
+    width: 306px;
+  }
+
+  .filmInfo {
+    width: 293px;
+  }
+
+  .gallery_list__item:nth-last-child(-n+2) {
+    padding-bottom: 30px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .container {
+    width: 876px;
+  }
+
+  .gallery-list__item,
+  .filmInfo {
+    width: 274px;
+  }
+}
