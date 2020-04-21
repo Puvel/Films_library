@@ -16,12 +16,6 @@
   height: 402px;
 }
 
-.gallery-list__item_link {
-  font-family: var(--main-font);
-  font-size: var(--main-font-size);
-  color: var(--main-decoration-color);
-  font-weight: 700;
-}
 
 .gallery-list__item_title {
   text-transform: uppercase;
@@ -38,22 +32,12 @@
 
 }
 
-.filmInfo__genre-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: 6px;
+.filmInfo__genre {
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  color: var(--main-decoration-color);
+  font-weight: 700;
 }
-
-.filmInfo__genre-list_item {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.filmInfo__genre-list_item-genre {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 
 .filmInfo__slash,
 .filmInfo__year {
@@ -135,8 +119,9 @@
   }
 
   .filmInfo {
-    width: 293px;
+    display: flex;
   }
+
 
   .gallery_list__item:nth-last-child(-n+2) {
     padding-bottom: 30px;
