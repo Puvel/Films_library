@@ -61,8 +61,8 @@ export default {
   },
 
   fetchRatingFilms() {
-      const popularityPrmts = `/trending/movie/day?api_key=${apiKey}&page=${this.page}`
-      return fetch (baseUrl + popularityPrmts)
+      const ratingPrmts = `/trending/movie/day?api_key=${apiKey}&page=${this.page}`
+      return fetch (baseUrl + ratingPrmts)
       .then(res => res.json())
       .then(data =>
         console.log(data.results)
