@@ -1,8 +1,8 @@
 import './stylesheet/main.css';
-import apiServesFetch from './services/services';
+import apiServicesFetch from './services/services';
 
 
-// apiServesFetch.fetchMoviesSearchApi();
-// apiServesFetch.fetchGenresListApi();
-// apiServesFetch.fetchMovieCardApi();
-apiServesFetch.fetchPopularityApi();
+apiServicesFetch.fetchMoviesSearchApi();
+// apiServicesFetch.fetchGenresListApi();
+// apiServicesFetch.fetchMovieCardApi();
+// apiServicesFetch.fetchPopularityApi();
