@@ -8,12 +8,12 @@ const popularityUrl = '/movie/popular';
 export default {
     page: 1,
     query: '',
+    totalPages:1,
   fetchMoviesSearchApi() {
     const movieSearchPrmts =`?api_key=${apiKey}&language=en-US&query=${this.query}&page=${this.page}&per_page=20&include_adult=false`
     return fetch (baseUrl + movieSearchUrl + movieSearchPrmts)
       .then(res => res.json())
       .then(data => {
-        this.incrementPage();
         return data.results})
       .catch(error => console.log(error));
 
@@ -27,19 +27,11 @@ export default {
     this.query = string;
   },
 
-  incrementPage() {
-    this.page += 1;
-  },
-
-  resetPage() {
-    this.page = 1;
-  },
-
   fetchGenresListApi(){
     const genresListPrmts =`?api_key=${apiKey}&language=en-US`
     return fetch (baseUrl + genresListUrl + genresListPrmts)
     .then(res => res.json())
-    .then(data => console.log(data.genres))
+    .then(data => { return data.genres})
     .catch(error => console.log(error));
 },
 
@@ -47,27 +39,21 @@ export default {
     const movieCardPrmts =`/movie/${movieId}?api_key=${apiKey}&language=en-US`
     return fetch (baseUrl + movieCardPrmts)
       .then(res => res.json())
-      .then(data =>
-          console.log(data))
+      .then(data => {
+          return data})
       .catch(error => console.log(error));
   },
 
-  fetchPopularityApi(){
+  fetchPopularityApi() {
     const popularityPrmts =`?api_key=${apiKey}&language=en-US&page=${this.page}`
     return fetch (baseUrl + popularityUrl + popularityPrmts)
       .then(res => res.json())
-      .then(data => console.log(data.results))
+      .then(data => {
+        this.totalPages = data.total_page;
+        console.log(data.results.slice(0,18));
+        return data.results})
       .catch(error => console.log(error));
-  },
-
-  fetchRatingFilms() {
-      const ratingPrmts = `/trending/movie/day?api_key=${apiKey}&page=${this.page}`
-      return fetch (baseUrl + ratingPrmts)
-      .then(res => res.json())
-      .then(data =>
-        console.log(data.results)
-      );
-  },
+  }
 }
 
 

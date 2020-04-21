@@ -5,5 +5,4 @@ import apiServicesFetch from './services/services';
 // apiServicesFetch.fetchMoviesSearchApi();
 // apiServicesFetch.fetchGenresListApi();
 // apiServicesFetch.fetchMovieCardApi();
-// apiServicesFetch.fetchPopularityApi();
-apiServicesFetch.fetchRatingFilms();
+apiServicesFetch.fetchPopularityApi();
