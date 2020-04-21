@@ -50,7 +50,6 @@ export default {
       .then(res => res.json())
       .then(data => {
         this.totalPages = data.total_page;
-        console.log(data.results.slice(0,18));
         return data.results})
       .catch(error => console.log(error));
   }
