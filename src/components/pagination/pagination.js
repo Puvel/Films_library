@@ -74,12 +74,13 @@ const Pagination = {
 
   // binding pages
   Bind: function () {
-    var a = Pagination.e.getElementsByTagName('a');
+    const a = Pagination.e.getElementsByTagName('a');
     for (let i = 0; i < a.length; i++) {
       if (+a[i].innerHTML === Pagination.page)
         a[i].className = 'pagination__page current';
-      a[i].addEventListener('click', Pagination.Click, false);
+      a[i].addEventListener('click', Pagination.Click);
     }
+    console.log(Pagination.page);
   },
 
   // write pagination
@@ -143,8 +144,8 @@ const Pagination = {
   // binding buttons
   Buttons: function (e) {
     const nav = e.getElementsByTagName('a');
-    nav[0].addEventListener('click', Pagination.Prev, false);
-    nav[1].addEventListener('click', Pagination.Next, false);
+    nav[0].addEventListener('click', Pagination.Prev);
+    nav[1].addEventListener('click', Pagination.Next);
   },
 
   // create skeleton
@@ -172,12 +173,13 @@ const Pagination = {
  * Initialization
  * * * * * * * * * * * * * * * * */
 
-var init = function () {
+const init = function () {
   Pagination.Init(document.getElementById('pagination'), {
-    size: 30, // pages size
+    size: 13, // pages size
     page: 1, // selected page
     step: 2, // pages before and after current
   });
 };
 
-document.addEventListener('DOMContentLoaded', init, false);
+document.addEventListener('DOMContentLoaded', init);
+
