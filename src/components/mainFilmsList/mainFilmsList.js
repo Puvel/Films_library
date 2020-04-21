@@ -88,3 +88,5 @@ function markup(films) {
     .join('');
   return ul;
 }
+
+export default renderHomeGalleryList;
