@@ -1,2 +1,3 @@
 import './stylesheet/main.css';
-import './components/mainFilmsList/mainFilmsList.js'
+import './components/searchForm/searchForm';
+import './components/mainFilmsList/mainFilmsList.js';
