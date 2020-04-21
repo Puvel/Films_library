@@ -4,6 +4,7 @@
 @import '../components/Card/navigation.css';
 @import '../components/searchForm/searchForm.css';
 @import '../components/searchBtn/searchBtn.css';
+@import '../components/mainFilmsList/galleryList.css';
 
 html {
   box-sizing: border-box;
@@ -25,7 +26,8 @@ body {
 }
 
 ul,
-ol {
+ol,
+li {
   list-style: none;
 }
 
