@@ -9,7 +9,7 @@ export default {
   query: '',
   totalPages: 1,
   fetchMoviesSearchApi() {
-    const movieSearchPrmts = `?api_key=${apiKey}&language=en-US&query=${this.query}&page=${this.page}&per_page=20&include_adult=false`;
+    const movieSearchPrmts = `?api_key=${apiKey}&language=en-US&query=${this.query}&page=${this.page}&include_adult=false`;
     return fetch(baseUrl + movieSearchUrl + movieSearchPrmts)
       .then(res => res.json())
       .then(data => {
