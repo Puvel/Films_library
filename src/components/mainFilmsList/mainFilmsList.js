@@ -42,3 +42,5 @@ function renderHomeGalleryList() {
     })
     .catch(err => console.log(err));
 }
+
+export default renderHomeGalleryList
