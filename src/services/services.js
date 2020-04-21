@@ -4,10 +4,11 @@ const movieSearchUrl = '/search/movie';
 const genresListUrl = '/genre/movie/list';
 const popularityUrl = '/movie/popular';
 
+
 export default {
   page: 1,
   query: '',
-  totalPages: 1,
+  totalPages: 19,
   fetchMoviesSearchApi() {
     const movieSearchPrmts = `?api_key=${apiKey}&language=en-US&query=${this.query}&page=${this.page}&per_page=20&include_adult=false`;
     return fetch(baseUrl + movieSearchUrl + movieSearchPrmts)
@@ -48,6 +49,7 @@ export default {
 
   fetchPopularityApi() {
     const popularityPrmts = `?api_key=${apiKey}&language=en-US&page=${this.page}`;
+    console.log(this.page);
     return fetch(baseUrl + popularityUrl + popularityPrmts)
       .then(res => res.json())
       .then(data => {
@@ -57,3 +59,5 @@ export default {
       .catch(error => console.log(error));
   },
 };
+
+
