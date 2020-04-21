@@ -3,13 +3,13 @@ const apiKey = 'a2c80789bced092c10745aa4387db8d2';
 const movieSearchUrl = '/search/movie';
 const genresListUrl = '/genre/movie/list';
 const popularityUrl = '/movie/popular';
-const movieId = [];
+// const movieId = [];
 
 export default {
+    page = 1,
+    query = '',
   fetchMoviesSearchApi() {
-    let page = 1;
-    let query = '';
-    const movieSearchPrmts =`?api_key=${apiKey}&language=en-US&query=${query}&page=${page}&per_page=20&include_adult=false`
+    const movieSearchPrmts =`?api_key=${apiKey}&language=en-US&query=${this.query}&page=${this.page}&per_page=20&include_adult=false`
     return fetch (baseUrl + movieSearchUrl + movieSearchPrmts)
       .then(res => res.json())
       .then(data => {
@@ -17,21 +17,22 @@ export default {
         return data.results})
       .catch(error => console.log(error));
 
-},
+    },
 
   get searchQuery(){
-    return query;
+    return this.query;
   },
 
   set searchQuery(string){
-    query = string;
+    this.query = string;
   },
 
   incrementPage() {
-    page += 1;
+    this.page += 1;
   },
+
   resetPage() {
-    page = 1;
+    this.page = 1;
   },
 
   fetchGenresListApi(){
@@ -42,7 +43,7 @@ export default {
     .catch(error => console.log(error));
 },
 
-  fetchMovieCardApi(){
+  fetchMovieCardApi(movieId){
     const movieCardPrmts =`/movie/${movieId}?api_key=${apiKey}&language=en-US`
     return fetch (baseUrl + movieCardPrmts)
       .then(res => res.json())
