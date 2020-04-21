@@ -5,17 +5,16 @@ import listItemTemplate from '../../templates/listItemTamplate.hbs';
 const refs = {
   mainSection: document.querySelector('.main_section'),
   galleryList: document.querySelector('.js-gallery_list'),
-  filmYear: document.querySelector('.gallery-list__item_year'),
 };
 
 renderHomeGalleryList();
 // renderWatchedAndQueueGalleryList();
 
 function renderHomeGalleryList() {
-  Promise.all([api.fetchRatingFilms(), api.fetchGenre()])
-    .then(result => {
-      const films = [...result[0]];
-      const ganres = result[1].genres;
+  Promise.all([api.fetchPopularityApi(), api.fetchGenresListApi()])
+    .then(data => {
+      const films = [...data];
+      const ganres = data.genres;
       films.map(item => {
         const ganArr = item.genre_ids;
         const ganName = ganArr
@@ -23,7 +22,7 @@ function renderHomeGalleryList() {
             const currGan = ganres.find(ganr => ganr.id === gan);
             return currGan.name;
           })
-          .join(',');
+          console.log(ganName);
         return (item.genre_ids = [...ganName]);
       });
       function markup(films) {
@@ -54,8 +53,7 @@ function renderWatchedAndQueueGalleryList() {
           .map(gan => {
             const currGan = ganres.find(ganr => ganr.id === gan);
             return currGan.name;
-          })
-          .join(',');
+          });
         return (item.genre_ids = [...ganName]);
       });
       function markup(films) {
@@ -76,10 +74,11 @@ function renderWatchedAndQueueGalleryList() {
     .catch(err => console.log(err));
 }
 
-// refs.galleryList.addEventListener('click', openMovieCard);
+refs.galleryList.addEventListener('click', openMovieCard);
 
-// function openMovieCard(e) {
-//   if (e.target.nodeName === 'IMG') {
-//     // функция Наташи по отрисовке карточки фильма
-//   }
-// }
+function openMovieCard(e) {
+  if (e.target.nodeName === 'BUTTON') {
+    console.log(e.target);
+    // функция Наташи по отрисовке карточки фильма
+  }
+}

@@ -49,6 +49,16 @@
   margin-right: 6px;
 }
 
+.filmInfo__genre-list_item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filmInfo__genre-list_item-genre {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 .filmInfo__slash,
 .filmInfo__year {
