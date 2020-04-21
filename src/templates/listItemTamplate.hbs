@@ -1,0 +1,32 @@
+{{!-- <ul class="gallery_list js-gallery_list"> --}}
+<li class="gallery-list__item" data-id="{{id}}">
+  <div class="item-wrap">
+    <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" width="280" height="403"
+      class="gallery-list__item_image" />
+    <div class="overlay">
+      <button class="overlay__button">READ ABOUT</button>
+    </div>
+  </div>
+  <a href="#" class="gallery-list__item_link">
+    <h3 class="gallery-list__item_title">{{title}}</h3>
+    <div class="filmInfo">
+      <ul class="filmInfo__genre-list">
+        {{#each genre_ids}}
+        <li class="filmInfo__genre-list_item">
+          <span class="filmInfo__genre-list_item-genre">{{this}}</span>
+        </li>
+        {{/each}}
+        <li class="filmInfo__list">
+          <span class="filmInfo__slash">|</span>
+        </li>
+        <li class="filmInfo__list">
+          <span class="filmInfo__year">{{release_date}}</span>
+        </li>
+        <li class="filmInfo__list">
+          <span class="filmInfo__popularity">{{vote_average}}</span>
+        </li>
+      </ul>
+    </div>
+  </a>
+</li>
+{{!-- </ul> --}}
