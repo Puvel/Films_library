@@ -1,4 +1,4 @@
-import './pagination.css';
+// import './pagination.css';
 
 const Pagination = {
   code: '',
@@ -18,27 +18,18 @@ const Pagination = {
     for (let i = s; i < f; i++) {
       Pagination.code += '<a class = "pagination__page">' + i + '</a>';
     }
+    console.log(f);
   },
 
   // add last page with separator
-  Last: function () {
-    if (window.matchMedia('screen and (min-width: 768px)').matches) {
-      Pagination.code +=
-        '<i class = "pagination__separator">...</i><a class = "pagination__page">' +
-        Pagination.size +
-        '</a>';
-    } else {
-    }
-  },
+  //   Last: function () {
+  //     Pagination.code += '<a class = "pagination__page">' + Pagination.size + '</a>';
+  //   },
 
   // add first page with separator
-  First: function () {
-    if (window.matchMedia('screen and (min-width: 768px)').matches) {
-      Pagination.code +=
-        '<a class = "pagination__page">1</a><i class = "pagination__separator">...</i>';
-    } else {
-    }
-  },
+  //   First: function () {
+  //     Pagination.code += '<a class = "pagination__page">1</a>';
+  //   },
 
   // --------------------
   // Handlers
@@ -74,7 +65,7 @@ const Pagination = {
 
   // binding pages
   Bind: function () {
-    var a = Pagination.e.getElementsByTagName('a');
+    const a = Pagination.e.getElementsByTagName('a');
     for (let i = 0; i < a.length; i++) {
       if (+a[i].innerHTML === Pagination.page)
         a[i].className = 'pagination__page current';
@@ -91,49 +82,28 @@ const Pagination = {
 
   // find pagination type
   Start: function () {
-    if (window.matchMedia('screen and (min-width: 768px)').matches) {
-      if (Pagination.size < Pagination.step * 2 + 6) {
-        Pagination.Add(1, Pagination.size + 1);
-      } else if (Pagination.page < Pagination.step * 2 + 1) {
-        Pagination.Add(1, Pagination.step * 2 + 4);
-        Pagination.Last();
-      } else if (Pagination.page > Pagination.size - Pagination.step * 2) {
-        Pagination.First();
-        Pagination.Add(
-          Pagination.size - Pagination.step * 2 - 2,
-          Pagination.size + 1,
-        );
-      } else {
-        Pagination.First();
-        Pagination.Add(
-          Pagination.page - Pagination.step,
-          Pagination.page + Pagination.step + 1,
-        );
-        Pagination.Last();
-      }
-      Pagination.Finish();
+    console.log(Pagination.size);
+    if (Pagination.size < Pagination.step * 2 + 6) {
+      Pagination.Add(1, Pagination.size + 1);
+    } else 
+    if (Pagination.page < Pagination.step * 2) {
+      Pagination.Add(1, Pagination.step * 2+2);
+      //   Pagination.Last();
+    } else if (Pagination.page > Pagination.size - Pagination.step * 2 +2) {
+      //   Pagination.First();
+      Pagination.Add(
+        Pagination.size - Pagination.step * 2,
+        Pagination.size + 1,
+      );
     } else {
-      if (Pagination.size < Pagination.step * 2 + 6) {
-        Pagination.Add(1, Pagination.size + 1);
-      } else if (Pagination.page < Pagination.step * 2) {
-        Pagination.Add(1, Pagination.step * 2 + 2);
-        //   Pagination.Last();
-      } else if (Pagination.page > Pagination.size - Pagination.step * 2 + 2) {
-        //   Pagination.First();
-        Pagination.Add(
-          Pagination.size - Pagination.step * 2,
-          Pagination.size + 1,
-        );
-      } else {
-        //   Pagination.First();
-        Pagination.Add(
-          Pagination.page - Pagination.step,
-          Pagination.page + Pagination.step + 1,
-        );
-        //   Pagination.Last();
-      }
-      Pagination.Finish();
+      //   Pagination.First();
+      Pagination.Add(
+        Pagination.page - Pagination.step,
+        Pagination.page + Pagination.step + 1,
+      );
+      //   Pagination.Last();
     }
+    Pagination.Finish();
   },
 
   // --------------------
@@ -172,7 +142,7 @@ const Pagination = {
  * Initialization
  * * * * * * * * * * * * * * * * */
 
-var init = function () {
+const init = function () {
   Pagination.Init(document.getElementById('pagination'), {
     size: 30, // pages size
     page: 1, // selected page
