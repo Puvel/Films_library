@@ -4,6 +4,7 @@ const movieSearchUrl = '/search/movie';
 const genresListUrl = '/genre/movie/list';
 const popularityUrl = '/movie/popular';
 
+
 export default {
   page: 1,
   query: '',
@@ -57,3 +58,5 @@ export default {
       .catch(error => console.log(error));
   },
 };
+
+
