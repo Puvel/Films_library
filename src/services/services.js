@@ -58,7 +58,16 @@ export default {
       .then(res => res.json())
       .then(data => console.log(data.results))
       .catch(error => console.log(error));
-  }
+  },
+
+  fetchRatingFilms() {
+      const popularityPrmts = `/trending/movie/day?api_key=${apiKey}&page=${this.page}`
+      return fetch (baseUrl + popularityPrmts)
+      .then(res => res.json())
+      .then(data =>
+        console.log(data.results)
+      );
+  },
 }
 
 
