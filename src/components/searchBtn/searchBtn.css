@@ -45,6 +45,7 @@
   
   .nav__logo-title {
     position: relative;
+    color: #ffffff;
     width: 175px;
     list-style: none;
     padding-left: 30px;
@@ -65,7 +66,7 @@
     text-decoration: none;
     cursor: pointer;
     position: relative;
-    color: #ffffff;
+    color: var(--main-light-color);
     letter-spacing: 1px;
     line-height: 16px;
     text-transform: uppercase;
@@ -80,7 +81,7 @@
     display: block;
     width: 0;
     height: 2px;
-    background-color: rgb(255,107,8);
+    background-color: var(--main-decoration-color);
     content: '';
   }
   
@@ -98,7 +99,7 @@
     width: 130px;
     height: 45px;
     border-radius: 5px;
-    color: #ffffff;
+    color: var(--main-light-color);
     background-color: transparent;
     cursor: pointer;
     text-transform: uppercase;
@@ -109,7 +110,7 @@
   }
   
   .btn-box__action-btn:hover {
-    background-color: rgb(255,107,8);
+    background-color: var(--main-decoration-color);
     border: none;
   }
   

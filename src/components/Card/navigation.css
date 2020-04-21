@@ -44,6 +44,7 @@
   
 .nav__logo-title {
     position: relative;
+    color: #ffffff;
     width: 175px;
     list-style: none;
     padding-left: 30px;
@@ -65,7 +66,7 @@
     text-decoration: none;
     cursor: pointer;
     position: relative;
-    color: #ffffff;
+    color: var(--main-light-color);
     text-transform: uppercase;
     font-size: var(--main-font-size);
     letter-spacing: 1px;
@@ -80,7 +81,7 @@
     display: block;
     width: 0;
     height: 2px; 
-    background-color: rgb(255,107,8);
+    background-color: var(--main-decoration-color);
     content: '';
   }
   
