@@ -8,8 +8,8 @@ const refs = {
   filmYear: document.querySelector('.gallery-list__item_year'),
 };
 
-// renderHomeGalleryList();
-renderWatchedAndQueueGalleryList();
+renderHomeGalleryList();
+// renderWatchedAndQueueGalleryList();
 
 function renderHomeGalleryList() {
   Promise.all([api.fetchRatingFilms(), api.fetchGenre()])
