@@ -9,7 +9,7 @@
       width: 280px;
       margin: 0 auto;
   }
-  
+
   .nav {
     padding-top: 45px;
     margin-bottom: 45px;
@@ -17,12 +17,12 @@
     align-items: center;
     justify-content: space-between;
   }
-  
+
   .nav__logo {
     display: flex;
     text-decoration: none;
   }
-  
+
   .nav__logo-title::before {
     position: absolute;
     display: inline-block;
@@ -42,7 +42,7 @@
     display: block;
     background-repeat: no-repeat;
   }
-  
+
   .nav__logo-title {
     position: relative;
     color: #ffffff;
@@ -52,7 +52,7 @@
     margin: 0;
     display: none;
   }
-  
+
   .nav__list {
     display: flex;
     justify-content: space-between;
@@ -61,7 +61,7 @@
     margin: 0;
     padding-top: 9px;
   }
-  
+
   .nav__btn {
     text-decoration: none;
     cursor: pointer;
@@ -76,19 +76,16 @@
     width: 150px;
     text-align: center;
   }
-  
-  .nav__btn::after {
-    display: block;
-    width: 0;
+
+  .nav__btn--active::after {
     height: 2px;
     background-color: var(--main-decoration-color);
+    display: block;
     content: '';
-  }
-  
-  .nav__btn:hover::after {
     width: auto;
   }
-  
+
+
   .search-input {
     font-size: 14px;
     letter-spacing: 1px;
@@ -118,7 +115,7 @@
       background-image: url('../../assets/images/mobile/home-header-bg320@2x.jpg');
     }
   }
-  
+
   @media (min-width: 768px) {
     .main_header-bg {
       background-image: url('../../assets/images/tablet/home-header-bg768.jpg');
@@ -126,7 +123,7 @@
     .container {
       width: 620px;
     }
-  
+
     .nav__logo-title {
       display: block;
       font-size: 30px;
@@ -139,35 +136,34 @@
       padding-left: 10px;
       padding-top: 4px;
     }
-  
+
     .search-form {
       text-align: center;
     }
-  
+
     @media (min-resolution: 192dpi) {
       .main_header-bg {
         background-image: url('../../assets/images/tablet/home-header-bg768@2x.jpg');
       }
     }
   }
-  
+
   @media (min-width: 1024px) {
     .main_header-bg {
       background-image: url('../../assets/images/desktop/home-header-bg1024.jpg');
     }
-  
+
     .container {
       width: 876px;
     }
-  
+
     .search-input {
       width: 340px;
     }
-  
+
     @media (min-resolution: 192dpi) {
       .main_header-bg {
         background-image: url('../../assets/images/desktop/home-header-bg1024@2x.jpg');
       }
     }
   }
-  

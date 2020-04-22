@@ -1,14 +1,15 @@
-.main_header-bg{
+/* .main_header-bg{
     background-image: url('../../assets/images/mobile/details-header-bg320.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
   }
+
 .container {
     width: 280px;
     margin: 0 auto;
-  } 
-  
+  }
+
 .nav{
     padding-top: 45px;
     padding-bottom: 160px;
@@ -16,12 +17,12 @@
     align-items: center;
     justify-content: space-between;
   }
-  
+
 .nav__logo{
     display: flex;
     text-decoration: none;
   }
-  
+
 .nav__logo-title::before {
     position: absolute;
     display: inline-block;
@@ -41,7 +42,7 @@
     background-image: url('../../assets/images/icons/film.svg');
     background-repeat: no-repeat;
   }
-  
+
 .nav__logo-title {
     position: relative;
     color: #ffffff;
@@ -51,8 +52,8 @@
     margin: 0;
     display: none;
   }
-  
-  
+
+
 .nav__list {
     display: flex;
     justify-content: space-between;
@@ -61,8 +62,9 @@
     margin: 0;
     padding-top: 9px;
   }
-  
+
   .nav__btn {
+    display: block;
     text-decoration: none;
     cursor: pointer;
     position: relative;
@@ -75,35 +77,35 @@
     font-weight: 500;
     width: 150px;
     text-align: center;
-  } 
-  
-  .nav__btn::after {
-    display: block;
+  }
+
+  .nav__btn--active::after {
     width: 0;
-    height: 2px; 
+    height: 2px;
     background-color: var(--main-decoration-color);
+    display: block;
     content: '';
   }
-  
-  .nav__btn:hover::after {
+
+  .nav__btn--active:hover::after {
     width: auto;
   }
-  
+
    @media (min-resolution: 192dpi) {
     .main-header__bg{
       background-image: url('../../assets/images/mobile/details-header-bg320@2x.jpg');
-    } 
+    }
   }
-  
+
   @media (min-width: 768px) {
     .container {
       width: 620px;
     }
-  
+
     .main_header-bg{
       background-image: url('../../assets/images/tablet/details-header-bg768.jpg');
     }
-  
+
     .nav__logo-title{
       display: block;
       font-size: 30px;
@@ -115,28 +117,28 @@
       padding-left: 10px;
       padding-top: 4px;
     }
-  
-  
+
+
   @media (min-resolution: 192dpi) {
     .main_header-bg{
       background-image: url('../../assets/images/tablet/details-header-bg768@2x.jpg');
     }
   }
   }
-  
+
   @media (min-width: 1024px) {
     .container {
       width: 876px;
     }
-  
+
     .main_header-bg{
       background-image: url('../../assets/images/desktop/details-header-bg1024.jpg');
     }
-  
+
   }
-  
+
   @media (min-resolution: 192dpi) {
     .main_header-bg{
       background-image: url('../../assets/images/desktop/details-header-bg1024@2x.jpg');
     }
-  }
+  } */
