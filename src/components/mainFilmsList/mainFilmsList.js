@@ -63,8 +63,14 @@ export function renderSearchResultGalleryList() {
   ])
     .then(result => {
       getResultFromFetchApi(result);
+      console.log(result);
       const films = [...result[0]];
       refs.galleryList.innerHTML = markup(films);
+            // if (films.length % 2 === 0) {
+      //   refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
+      //   const arrow = document.querySelector('.arrow')
+      //   arrow.addEventListener('click', Pagination.Next)
+      // }
     })
     .catch(err => console.log(err));
 }
