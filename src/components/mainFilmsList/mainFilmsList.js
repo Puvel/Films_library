@@ -1,6 +1,8 @@
 import apiServicesFetch from '../../services/services';
 import libraryListItemTemplate from '../../templates/libraryListItemTemplate.hbs';
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
+import { init } from '../pagination/pagination';
+import Pagination from '../pagination/pagination';
 
 const refs = {
   mainSection: document.querySelector('.main_section'),
@@ -20,11 +22,16 @@ export function renderHomeGalleryList() {
       getResultFromFetchApi(result);
       const films = [...result[0]];
       refs.galleryList.innerHTML = markup(films);
+      if (films.length % 2 === 0) {
+        refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
+        const arrow = document.querySelector('.arrow');
+        arrow.addEventListener('click', Pagination.Next);
+      }
     })
     .catch(err => console.log(err));
 }
 
-function renderWatchedAndQueueGalleryList() {
+export function renderWatchedAndQueueGalleryList() {
   Promise.all([
     apiServicesFetch.fetchPopularityApi(),
     apiServicesFetch.fetchGenresListApi(),
@@ -49,7 +56,7 @@ function renderWatchedAndQueueGalleryList() {
     .catch(err => console.log(err));
 }
 
-function renderSearchResultGalleryList() {
+export function renderSearchResultGalleryList() {
   Promise.all([
     apiServicesFetch.fetchMoviesSearchApi(),
     apiServicesFetch.fetchGenresListApi(),
@@ -72,8 +79,16 @@ function getResultFromFetchApi(result) {
       return currGan.name;
     });
     const genreList = ganName.toString().replace(/,/g, ', ');
+
     return (item.genre_ids = genreList);
   });
+}
+
+function nextButtonTemplate() {
+  return `
+  <li class="gallery-list__item">
+  <span class="arrow"></span>
+</li>`;
 }
 
 function markup(films) {
@@ -88,3 +103,5 @@ function markup(films) {
     .join('');
   return ul;
 }
+
+export default renderHomeGalleryList;
