@@ -71,7 +71,8 @@ function getResultFromFetchApi(result) {
       const currGan = ganres.find(ganr => ganr.id === gan);
       return currGan.name;
     });
-    return (item.genre_ids = [...ganName.slice(0, 4)]);
+   const genreList = ganName.toString().replace(/,/g, ', ')
+    return (item.genre_ids = genreList);
   });
 }
 
