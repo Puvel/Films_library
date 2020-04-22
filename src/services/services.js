@@ -1,3 +1,4 @@
+import { init } from '../components/pagination/pagination';
 const baseUrl = 'https://api.themoviedb.org/3';
 const apiKey = 'a2c80789bced092c10745aa4387db8d2';
 const movieSearchUrl = '/search/movie';
@@ -53,6 +54,7 @@ export default {
       .then(res => res.json())
       .then(data => {
         this.totalPages = data.total_pages;
+        init();
         return data.results;
       })
       .catch(error => console.log(error));
