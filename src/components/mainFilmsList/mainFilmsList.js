@@ -10,8 +10,6 @@ const refs = {
 };
 
 renderHomeGalleryList();
-// renderWatchedAndQueueGalleryList();
-// renderSearchResultGalleryList()
 
 export function renderHomeGalleryList() {
   Promise.all([
@@ -66,11 +64,6 @@ export function renderSearchResultGalleryList() {
       console.log(result);
       const films = [...result[0]];
       refs.galleryList.innerHTML = markup(films);
-            // if (films.length % 2 === 0) {
-      //   refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
-      //   const arrow = document.querySelector('.arrow')
-      //   arrow.addEventListener('click', Pagination.Next)
-      // }
     })
     .catch(err => console.log(err));
 }
@@ -109,5 +102,3 @@ function markup(films) {
     .join('');
   return ul;
 }
-
-export default renderHomeGalleryList;
