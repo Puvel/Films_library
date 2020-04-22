@@ -15,7 +15,7 @@ function renderCardFilm(e) {
     const id = li.dataset.id;
 
     createCardFilm(id);
-  }
+  } 
 }
 
 const container = document.querySelector('.main_section');

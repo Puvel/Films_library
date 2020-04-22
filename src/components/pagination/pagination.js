@@ -166,3 +166,5 @@ export const init = function () {
     step: 2,
   });
 };
+
+export default Pagination;
