@@ -1,8 +1,8 @@
 import apiServicesFetch from '../../services/services';
 import libraryListItemTemplate from '../../templates/libraryListItemTemplate.hbs';
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
-import { init } from '../pagination/pagination'
-import Pagination from '../pagination/pagination'
+import { init } from '../pagination/pagination';
+import Pagination from '../pagination/pagination';
 
 const refs = {
   mainSection: document.querySelector('.main_section'),
@@ -24,8 +24,8 @@ export function renderHomeGalleryList() {
       refs.galleryList.innerHTML = markup(films);
       if (films.length % 2 === 0) {
         refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
-        const arrow = document.querySelector('.arrow')
-        arrow.addEventListener('click', Pagination.Next)
+        const arrow = document.querySelector('.arrow');
+        arrow.addEventListener('click', Pagination.Next);
       }
     })
     .catch(err => console.log(err));
@@ -63,8 +63,14 @@ export function renderSearchResultGalleryList() {
   ])
     .then(result => {
       getResultFromFetchApi(result);
+      console.log(result);
       const films = [...result[0]];
       refs.galleryList.innerHTML = markup(films);
+            // if (films.length % 2 === 0) {
+      //   refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
+      //   const arrow = document.querySelector('.arrow')
+      //   arrow.addEventListener('click', Pagination.Next)
+      // }
     })
     .catch(err => console.log(err));
 }
@@ -105,4 +111,3 @@ function markup(films) {
 }
 
 export default renderHomeGalleryList;
-
