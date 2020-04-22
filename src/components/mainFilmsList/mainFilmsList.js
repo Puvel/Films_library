@@ -93,7 +93,9 @@ function getResultFromFetchApi(result) {
 function nextButtonTemplate() {
   return `
   <li class="gallery-list__item">
+
   <span class="arrow"></span>
+
 </li>`;
 }
 
