@@ -11,7 +11,7 @@ renderHomeGalleryList();
 // renderWatchedAndQueueGalleryList();
 // renderSearchResultGalleryList()
 
-function renderHomeGalleryList() {
+export function renderHomeGalleryList() {
   Promise.all([
     apiServicesFetch.fetchPopularityApi(),
     apiServicesFetch.fetchGenresListApi(),
@@ -87,5 +87,3 @@ function markup(films) {
     .join('');
   return ul;
 }
-
-export default renderHomeGalleryList;
