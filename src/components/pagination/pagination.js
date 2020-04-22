@@ -1,7 +1,6 @@
 import './pagination.css';
 import services from '../../services/services.js';
-import {renderHomeGalleryList} from '../mainFilmsList/mainFilmsList.js';
-
+import { renderHomeGalleryList, renderSearchResultGalleryList} from '../mainFilmsList/mainFilmsList.js';
 const gallery = document.querySelector('.js-gallery_list');
 
 const Pagination = {
@@ -41,9 +40,14 @@ const Pagination = {
   Fetch: function () {
     services.page = Pagination.page;
     gallery.innerHTML = '';
-    Pagination.Start();
-    services.fetchPopularityApi();
-    renderHomeGalleryList();
+    const Search = document.querySelector('.search-form_input');
+    if (!Search.value) {
+      renderHomeGalleryList();
+      Pagination.Start();
+    } else {
+      renderSearchResultGalleryList();
+      Pagination.Start();
+    }
   },
 
   Click: function () {
