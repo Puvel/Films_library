@@ -1,8 +1,6 @@
 import './pagination.css';
 import services from '../../services/services.js';
-import renderHomeGalleryList from '../mainFilmsList/mainFilmsList.js';
-import '../cardItem/cardItem';
-import '../mainFilmsList/mainFilmsList';
+import {renderHomeGalleryList} from '../mainFilmsList/mainFilmsList.js';
 
 const gallery = document.querySelector('.js-gallery_list');
 
