@@ -1,6 +1,6 @@
 import './pagination.css';
 import services from '../../services/services.js';
-import {renderHomeGalleryList} from '../mainFilmsList/mainFilmsList.js';
+import { renderHomeGalleryList, renderSearchResultGalleryList} from '../mainFilmsList/mainFilmsList.js';
 
 const gallery = document.querySelector('.js-gallery_list');
 
@@ -42,7 +42,6 @@ const Pagination = {
     services.page = Pagination.page;
     gallery.innerHTML = '';
     Pagination.Start();
-    services.fetchPopularityApi();
     renderHomeGalleryList();
   },
 
@@ -166,3 +165,5 @@ export const init = function () {
     step: 2,
   });
 };
+
+export default Pagination;
