@@ -1,25 +1,23 @@
 import searchForm from '../../templates/searchForm.hbs';
 import './searchForm.css';
 import apiServicesFetch from '../../services/services';
-
-const ref = {
-  searchForm: document.querySelector('.js-main_header'),
-};
-const markup = searchForm();
-ref.searchForm.insertAdjacentHTML('beforeend', markup);
-
-// import listItemTamplate from '../../templates/listItemTamplate.hbs';
 import libraryListItemTemplate from '../../templates/libraryListItemTemplate.hbs';
 
 const refs = {
-  input: document.querySelector('.search-input'),
-  searchForm: document.querySelector('.js-main_header'),
-  formSearch: document.querySelector('.search-form'),
+  input: document.querySelector('.search-form_input'),
+  searchInput: document.querySelector('.search-form_wrapper'),
+  formSearch: document.querySelector('#js-form'),
   galleryList: document.querySelector('.js-gallery_list'),
 
 };
+const markup = searchForm();
+console.log(refs.searchInput);
+refs.searchInput.insertAdjacentHTML('beforeend', markup);
+refs.formSearch = document.querySelector('#js-form');
+console.log(refs.searchForm);
 
 refs.formSearch.addEventListener('input', hundleSubmit);
+console.log(refs.formSearch);
 
 function hundleSubmit(e) {
   e.preventDefault();
