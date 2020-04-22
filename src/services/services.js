@@ -54,6 +54,7 @@ export default {
     const popularityPrmts = `?api_key=${apiKey}&language=en-US&page=${this.page}`;
     return fetch(baseUrl + popularityUrl + popularityPrmts)
       .then(res => res.json())
+
       .then(data => {
         this.totalPages = data.total_pages;
         init();
