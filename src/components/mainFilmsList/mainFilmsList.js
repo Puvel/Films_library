@@ -2,7 +2,7 @@ import apiServicesFetch from '../../services/services';
 import libraryListItemTemplate from '../../templates/libraryListItemTemplate.hbs';
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
 import Pagination from '../pagination/pagination';
-import notFoundImg from '../../assets/images/notFound.jpg'
+import notFoundImg from '../../assets/images/notFound.jpg';
 
 const refs = {
   mainSection: document.querySelector('.main_section'),
@@ -61,7 +61,6 @@ export function renderSearchResultGalleryList() {
   ])
     .then(result => {
       getResultFromFetchApi(result);
-      console.log(result);
       const films = [...result[0]];
       refs.galleryList.innerHTML = markup(films);
       if (films.length % 2 === 0) {
@@ -98,11 +97,14 @@ function nextButtonTemplate() {
 function markup(films) {
   const ul = films
     .map(item => {
-      const changeItem = {
-        ...item,
-        release_date: item.release_date.slice(0, 4),
-        notFoundImg
-      };
+      let changeItem = {};
+      if (item.release_date) {
+        changeItem = {
+          ...item,
+          release_date: item.release_date.slice(0, 4),
+          notFoundImg,
+        };
+      }
       return libraryListItemTemplate(changeItem);
     })
     .join('');
