@@ -2,6 +2,7 @@ import apiServicesFetch from '../../services/services';
 import libraryListItemTemplate from '../../templates/libraryListItemTemplate.hbs';
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
 import Pagination from '../pagination/pagination';
+import notFoundImg from '../../assets/images/notFound.jpg'
 
 const refs = {
   mainSection: document.querySelector('.main_section'),
@@ -9,8 +10,6 @@ const refs = {
 };
 
 renderHomeGalleryList();
-// renderWatchedAndQueueGalleryList();
-// renderSearchResultGalleryList()
 
 export function renderHomeGalleryList() {
   Promise.all([
@@ -65,11 +64,11 @@ export function renderSearchResultGalleryList() {
       console.log(result);
       const films = [...result[0]];
       refs.galleryList.innerHTML = markup(films);
-      // if (films.length % 2 === 0) {
-      //   refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
-      //   const arrow = document.querySelector('.arrow')
-      //   arrow.addEventListener('click', Pagination.Next)
-      // }
+      if (films.length % 2 === 0) {
+        refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
+        const arrow = document.querySelector('.arrow');
+        arrow.addEventListener('click', Pagination.Next);
+      }
     })
     .catch(err => console.log(err));
 }
@@ -102,11 +101,10 @@ function markup(films) {
       const changeItem = {
         ...item,
         release_date: item.release_date.slice(0, 4),
+        notFoundImg
       };
       return libraryListItemTemplate(changeItem);
     })
     .join('');
   return ul;
 }
-
-export default renderHomeGalleryList;

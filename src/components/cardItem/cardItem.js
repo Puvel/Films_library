@@ -1,6 +1,7 @@
 import './cardItem.css';
 import services from '../../services/services';
 import filmCardTemplate from '../../templates/filmCardTemplate.hbs';
+import notFoundImg from '../../assets/images/notFound.jpg'
 
 const refs = {
   galleryList: document.querySelector('.js-gallery_list'),
@@ -42,7 +43,8 @@ function createCardFilm(id) {
     .catch(err => console.log(err));
 
   function insertCardItems(film) {
-    const markup = filmCardTemplate(film);
+    const copyFilm = {...film,notFoundImg}
+    const markup = filmCardTemplate(copyFilm);
     container.innerHTML = markup;
   }
 }
