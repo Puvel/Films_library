@@ -14,6 +14,7 @@ export default {
     return fetch(baseUrl + movieSearchUrl + movieSearchPrmts)
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         return data.results;
       })
       .catch(error => console.log(error));
