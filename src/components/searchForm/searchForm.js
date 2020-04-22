@@ -21,7 +21,7 @@ console.log(refs.formSearch);
 
 function hundleSubmit(e) {
   e.preventDefault();
-
+  apiServicesFetch.page = 1;
   const inputQuery = e.currentTarget.elements.query.value;
   apiServicesFetch.searchQuery = inputQuery;
   renderHomeGalleryList();
