@@ -1,51 +1,71 @@
+import searchForm from '../../templates/searchForm.hbs';
 import './searchForm.css';
-// import searchForm from '../../templates/searchForm.hbs';
-// import './searchForm.css';
 import apiServicesFetch from '../../services/services';
 
+const ref = {
+  searchForm: document.querySelector('.js-main_header'),
+};
+const markup = searchForm();
+ref.searchForm.insertAdjacentHTML('beforeend', markup);
 
+// import listItemTamplate from '../../templates/listItemTamplate.hbs';
+import libraryListItemTemplate from '../../templates/libraryListItemTemplate.hbs';
 
 const refs = {
   input: document.querySelector('.search-input'),
-    searchForm: document.querySelector('.js-main_header'),
-    form:  document.querySelector('#js-form')
-  };
+  searchForm: document.querySelector('.js-main_header'),
+  formSearch: document.querySelector('.search-form'),
+  galleryList: document.querySelector('.js-gallery_list'),
 
-  // function insertListItems(items){
-  //   const markup = searchForm(items)
-  //   refs.searchForm.insertAdjacentHTML('beforeend', markup);
-  //   console.log(insertListItems);
+};
 
-  // }
-
-  // const markup = searchForm()
-  // refs.form.insertAdjacentHTML('beforeend', markup);
-
-
-// let inputValue = document.querySelector('.search-input');
-// const form = document.querySelector('#js-form');
-// // const error = document.querySelector('.error');
-
-refs.form.addEventListener('input', hundleSubmit);
+refs.formSearch.addEventListener('input', hundleSubmit);
 
 function hundleSubmit(e) {
   e.preventDefault();
-  // searchFilms();
 
   const inputQuery = e.currentTarget.elements.query.value;
-  console.log(e.currentTarget.elements.query.value);
   apiServicesFetch.searchQuery = inputQuery;
-  apiServicesFetch.fetchMoviesSearchApi().then(results => {
-    insertListItems(results)
-  })
-}
-
- 
-function insertListItems(items){
-  const markup = searchForm(items)
-  refs.searchForm.insertAdjacentHTML('beforeend', markup);
+  renderHomeGalleryList();
 
 }
+
+function renderHomeGalleryList() {
+  Promise.all([
+    apiServicesFetch.fetchMoviesSearchApi(),
+    apiServicesFetch.fetchGenresListApi(),
+  ])
+    .then(result => {
+      const films = [...result[0]];
+      const ganres = result[1];
+      films.map(item => {
+        const ganArr = item.genre_ids;
+        const ganName = ganArr.map(gan => {
+          const currGan = ganres.find(ganr => ganr.id === gan);
+          return currGan.name;
+        });
+        return (item.genre_ids = [...ganName]);
+      });
+      function markup(films) {
+        const ul = films
+          .map(item => {
+            const changeItem = {
+              ...item,
+              release_date: item.release_date.slice(0, 4),
+            };
+            return libraryListItemTemplate(changeItem);
+          })
+          .join('');
+        return ul;
+      }
+      refs.galleryList.insertAdjacentHTML('beforeend', markup(films));
+      refs.galleryList.innerHTML = markup(films)
+
+    })
+    .catch(err => console.log(err));
+}
+
+
 
   
 

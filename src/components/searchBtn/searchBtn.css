@@ -1,8 +1,9 @@
-.main_header-bg {
+/* .main_header-bg {
     background-image: url('../../assets/images/mobile/library-header-bg320.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
+    margin-bottom: 20px;
   }
 
   .container {
@@ -87,7 +88,7 @@
   
   .nav__btn:hover::after {
     width: auto;
-  }
+  } */
   
   .btn-box {
     display: flex;
@@ -123,13 +124,14 @@
   @media (min-width: 768px) {
     .main_header-bg {
       background-image: url('../../assets/images/tablet/library-header-bg768.jpg');
+      margin-bottom: 55px;
     }
   
     .container {
       width: 620px;
     }
   
-    .nav__logo-title {
+    /* .nav__logo-title {
       display: block;
       font-size: 30px;
       letter-spacing: 2px;
@@ -139,7 +141,7 @@
       display: block;
       padding-left: 10px;
       padding-top: 4px;
-    }
+    } */
   
     .btn-box__action-btn {
       margin-right: 16px;
