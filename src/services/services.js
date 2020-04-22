@@ -14,7 +14,6 @@ export default {
     return fetch(baseUrl + movieSearchUrl + movieSearchPrmts)
       .then(res => res.json())
       .then(data => {
-        this.page = 1;
         this.totalPages = data.total_pages;
         init();
         return data.results;

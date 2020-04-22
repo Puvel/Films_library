@@ -1,7 +1,6 @@
 import apiServicesFetch from '../../services/services';
 import libraryListItemTemplate from '../../templates/libraryListItemTemplate.hbs';
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
-import { init } from '../pagination/pagination';
 import Pagination from '../pagination/pagination';
 
 const refs = {
@@ -66,7 +65,7 @@ export function renderSearchResultGalleryList() {
       console.log(result);
       const films = [...result[0]];
       refs.galleryList.innerHTML = markup(films);
-            // if (films.length % 2 === 0) {
+      // if (films.length % 2 === 0) {
       //   refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
       //   const arrow = document.querySelector('.arrow')
       //   arrow.addEventListener('click', Pagination.Next)
