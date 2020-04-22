@@ -1,9 +1,10 @@
+import { init } from '../components/pagination/pagination';
+
 const baseUrl = 'https://api.themoviedb.org/3';
 const apiKey = 'a2c80789bced092c10745aa4387db8d2';
 const movieSearchUrl = '/search/movie';
 const genresListUrl = '/genre/movie/list';
 const popularityUrl = '/movie/popular';
-
 
 export default {
   page: 1,
@@ -49,15 +50,14 @@ export default {
 
   fetchPopularityApi() {
     const popularityPrmts = `?api_key=${apiKey}&language=en-US&page=${this.page}`;
-    console.log(this.page);
+    // console.log(this.page);
     return fetch(baseUrl + popularityUrl + popularityPrmts)
       .then(res => res.json())
       .then(data => {
         this.totalPages = data.total_pages;
+        init()
         return data.results;
       })
       .catch(error => console.log(error));
   },
 };
-
-

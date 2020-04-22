@@ -1,12 +1,14 @@
 import './pagination.css';
 import services from '../../services/services.js';
 import renderHomeGalleryList from '../mainFilmsList/mainFilmsList.js';
+import '../cardItem/cardItem';
+import '../mainFilmsList/mainFilmsList';
 
 const gallery = document.querySelector('.js-gallery_list');
 
 const Pagination = {
   code: '',
-  
+
   Extend: function (data) {
     data = data || {};
     Pagination.size = data.size || 300;
@@ -46,7 +48,6 @@ const Pagination = {
     renderHomeGalleryList();
   },
 
-  
   Click: function () {
     Pagination.page = +this.innerHTML;
     Pagination.Fetch();
@@ -65,8 +66,6 @@ const Pagination = {
     }
   },
 
-  
-
   Next: function () {
     const b = document.querySelector('.btn-next');
     if (Pagination.page !== Pagination.size) {
@@ -80,7 +79,6 @@ const Pagination = {
     }
   },
 
-  
   Bind: function () {
     const a = Pagination.e.getElementsByTagName('a');
     for (let i = 0; i < a.length; i++) {
@@ -138,19 +136,17 @@ const Pagination = {
     }
   },
 
-  
   Buttons: function (e) {
     const nav = e.getElementsByTagName('button');
     nav[0].addEventListener('click', Pagination.Prev);
     nav[1].addEventListener('click', Pagination.Next);
   },
 
- 
   Create: function (e) {
     const html = [
-      '<button class="pagination__btn btn-prev"></button>', 
-      '<span></span>', 
-      '<button class="pagination__btn btn-next"></button>', 
+      '<button class="pagination__btn btn-prev"></button>',
+      '<span></span>',
+      '<button class="pagination__btn btn-next"></button>',
     ];
 
     e.innerHTML = html.join('');
@@ -158,22 +154,19 @@ const Pagination = {
     Pagination.Buttons(e);
   },
 
-
   Init: function (e, data) {
     Pagination.Extend(data);
     Pagination.Create(e);
     Pagination.Start();
- 
   },
 };
 
-
-const init = function () {
+export const init = function () {
   Pagination.Init(document.getElementById('pagination'), {
-    size: services.totalPages, 
-    page: services.page, 
-    step: 2, 
+    size: services.totalPages,
+    page: services.page,
+    step: 2,
   });
 };
 
-document.addEventListener('DOMContentLoaded', init);
+export default Pagination;
