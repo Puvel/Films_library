@@ -4,12 +4,14 @@
   justify-content: space-between;
   margin: 0 auto;
   border-radius: 5px;
-  padding: 40px 0;
+  padding: 35px 0;
 }
+
 
 @media (min-width: 768px) {
   #pagination {
     width: 358px;
+    padding: 55px 0;
   }
 }
 
