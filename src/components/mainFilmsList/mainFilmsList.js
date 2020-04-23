@@ -7,6 +7,8 @@ import notFoundImg from '../../assets/images/notFound.jpg';
 const refs = {
   mainSection: document.querySelector('.main_section'),
   galleryList: document.querySelector('.js-gallery_list'),
+  queueBtn: document.querySelector('#watch-later-btn'),
+  watchBtn: document.querySelector('#watch-btn'),
 };
 
 renderHomeGalleryList();
@@ -51,6 +53,7 @@ export function renderWatchedAndQueueGalleryList() {
       }
       refs.galleryList.innerHTML = markup(films);
     })
+
     .catch(err => console.log(err));
 }
 
@@ -67,6 +70,9 @@ export function renderSearchResultGalleryList() {
         refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
         const arrow = document.querySelector('.arrow');
         arrow.addEventListener('click', Pagination.Next);
+        const navMenu = document.querySelector('.nav__home');
+        navMenu.textContent = '';
+        navMenu.textContent = 'GO BACK';
       }
     })
     .catch(err => console.log(err));
@@ -90,7 +96,9 @@ function getResultFromFetchApi(result) {
 function nextButtonTemplate() {
   return `
   <li class="gallery-list__item">
+
   <span class="arrow"></span>
+
 </li>`;
 }
 

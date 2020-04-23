@@ -8,6 +8,10 @@
 
 .main_header-bg {
     background-image: url('../../assets/images/mobile/home-header-bg320.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .main_header-bg-btn {
@@ -18,5 +22,94 @@
     margin-bottom: 20px;
   }
 
+  @media (min-resolution: 192dpi) {
+    .main_header-bg-card {
+      background-image: url('../../assets/images/mobile/details-header-bg320@2x.jpg');
+    }
+  }
 
-  
+  @media (min-resolution: 192dpi) {
+    .main_header-bg {
+      background-image: url('../../assets/images/mobile/home-header-bg320@2x.jpg');
+    }
+  }
+
+  @media (min-resolution: 192dpi) {
+    .main_header-bg-btn {
+      background-image: url('../../assets/images/mobile/details-header-bg320@2x.jpg');
+    }
+  }
+
+  @media (min-width: 768px) {
+    .main_header-bg-card {
+      background-image: url('../../assets/images/tablet/details-header-bg768.jpg');
+      margin-bottom: 55px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .main_header-bg {
+      background-image: url('../../assets/images/tablet/home-header-bg768.jpg');
+      margin-bottom: 55px;
+      }
+    }
+
+  @media (min-width: 768px) {
+    .main_header-bg-btn {
+      background-image: url('../../assets/images/tablet/library-header-bg768.jpg');
+      margin-bottom: 55px;
+        }
+      }
+
+  @media (min-resolution: 192dpi) {
+    .main_header-bg-card {
+      background-image: url('../../assets/images/tablet/details-header-bg768@2x.jpg');
+        }
+      }
+
+ @media (min-resolution: 192dpi) {
+    .main_header-bg {
+    background-image: url('../../assets/images/tablet/home-header-bg768@2x.jpg');
+        }
+      }
+
+  @media (min-resolution: 192dpi) {
+    .main_header-bg-btn {
+     background-image: url('../../assets/images/tablet/library-header-bg768@2x.jpg');
+        }
+      }
+
+  @media (min-width: 1024px) {
+      .main_header-bg-card {
+      background-image: url('../../assets/images/desktop/details-header-bg1024.jpg');
+        }
+      }
+  @media (min-width: 1024px) {
+      .main_header-bg {
+      background-image: url('../../assets/images/desktop/home-header-bg1024.jpg');
+        }
+      }
+
+  @media (min-width: 1024px) {
+        .main_header-bg-btn {
+          background-image: url('../../assets/images/desktop/library-header-bg1024.jpg');
+        }
+      }
+
+  @media (min-resolution: 192dpi) {
+        .main_header-bg-card {
+          background-image: url('../../assets/images/desktop/details-header-bg1024@2x.jpg');
+        }
+      }
+
+  @media (min-resolution: 192dpi) {
+        .main_header-bg {
+          background-image: url('../../assets/images/desktop/home-header-bg1024@2x.jpg');
+        }
+      }
+
+   @media (min-resolution: 192dpi) {
+        .main_header-bg-btn {
+          background-image: url('../../assets/images/desktop/library-header-bg1024@2x.jpg');
+        }
+      }
