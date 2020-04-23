@@ -26,11 +26,16 @@
     margin-right: 20px;
   }
   
-  .btn-box__action-btn:hover {
+  /* .btn-box__action-btn:hover {
+    background-color: var(--main-decoration-color);
+    border: none;
+  } */
+  
+  .isActive {
     background-color: var(--main-decoration-color);
     border: none;
   }
-  
+
   @media (min-resolution: 192dpi) {
     .main-header__bg {
       background-image: url('../../assets/images/mobile/library-header-bg320@2x.jpg');
