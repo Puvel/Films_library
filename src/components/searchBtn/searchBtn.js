@@ -7,3 +7,5 @@ const refs = {
   };
   const markup = searchBtn()
   refs.searchBtn.insertAdjacentHTML('beforeend', markup);
+
+

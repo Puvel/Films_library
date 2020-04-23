@@ -1,0 +1,71 @@
+#pagination {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 35px 0;
+}
+
+@media (min-width: 768px) {
+  #pagination {
+    width: 358px;
+    padding: 55px 0;
+  }
+}
+
+.pagination__btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--footer-bg-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.btn-prev {
+  background-image: url('../../assets/images/icons/arrow-left.svg');
+}
+
+.btn-next {
+  background-image: url('../../assets/images/icons/arrow-right.svg');
+}
+
+.pagination__page,
+.pagination__separator {
+  display: inline-block;
+  color: var(--main-dark-color);
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.24px;
+  padding: 13px 0;
+  width: 30px;
+  height: 40px;
+}
+
+@media (min-width: 768px) {
+  .pagination__page,
+  .pagination__separator {
+    width: 24px;
+  }
+}
+
+.pagination__page {
+  margin: 0 2px 0 2px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination__separator {
+  margin: 0 3px 0 3px;
+}
+
+#pagination a.current {
+  border-radius: 5px;
+  background-color: var(--main-decoration-color);
+  color: var(--main-light-color);
+  width: 40px;
+  height: 40px;
+}
