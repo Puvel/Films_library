@@ -11,7 +11,7 @@
     justify-content: center;
     padding-bottom: 65px;
   }
-  
+
   .btn-box__action-btn {
     width: 130px;
     height: 45px;
@@ -25,12 +25,7 @@
     font-weight: 500;
     margin-right: 20px;
   }
-  
-  /* .btn-box__action-btn:hover {
-    background-color: var(--main-decoration-color);
-    border: none;
-  } */
-  
+
   .isActive {
     background-color: var(--main-decoration-color);
     border: none;
@@ -41,28 +36,28 @@
       background-image: url('../../assets/images/mobile/library-header-bg320@2x.jpg');
     }
   }
-  
+
   @media (min-width: 768px) {
     .main_header-bg {
       background-image: url('../../assets/images/tablet/library-header-bg768.jpg');
       margin-bottom: 55px;
     }
-  
+
     .container {
       width: 620px;
     }
-  
+
     .btn-box__action-btn {
       margin-right: 16px;
     }
-  
+
     @media (min-resolution: 192dpi) {
       .main_header-bg {
         background-image: url('../../assets/images/tablet/library-header-bg768@2x.jpg');
       }
     }
   }
-  
+
   @media (min-width: 1024px) {
     .main_header-bg {
       background-image: url('../../assets/images/desktop/library-header-bg1024.jpg');
@@ -71,10 +66,10 @@
       width: 876px;
     }
   }
-  
+
   @media (min-resolution: 192dpi) {
     .main_header-bg {
       background-image: url('../../assets/images/desktop/library-header-bg1024@2x.jpg');
     }
   }
-  
+
