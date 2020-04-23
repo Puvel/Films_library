@@ -6,6 +6,7 @@
   width: 272px;
 }
 
+
 .gallery-list__item:not(:last-child) {
   padding-bottom: 20px;
 }
@@ -108,11 +109,16 @@
     width: 620px;
   }
 
+
+
   .gallery_list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     padding-bottom: 54px;
+  }
+
+  .gallery-list__item:not(:nth-child(2n)) {
+    margin-right: 30px;
   }
 
   .filmInfo {
@@ -134,6 +140,16 @@
   .gallery_list {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .gallery-list__item:nth-child(2n) {
+    margin-right: 20px;
+  }
+
+
+
+  .gallery-list__item:nth-child(3n) {
+    margin-right: 0px;
   }
 
 
@@ -232,6 +248,5 @@
     background: var(--main-decoration-color);
 
   }
-
 
 }
