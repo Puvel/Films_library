@@ -67,6 +67,7 @@ export function renderSearchResultGalleryList() {
         refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
         const arrow = document.querySelector('.arrow');
         arrow.addEventListener('click', Pagination.Next);
+        
       }
     })
     .catch(err => console.log(err));
@@ -90,7 +91,9 @@ function getResultFromFetchApi(result) {
 function nextButtonTemplate() {
   return `
   <li class="gallery-list__item">
+
   <span class="arrow"></span>
+
 </li>`;
 }
 
