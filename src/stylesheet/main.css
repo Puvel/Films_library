@@ -159,6 +159,19 @@ button:focus {
   text-decoration: underline;
 }
 
+.noResult{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 50px;
+}
+.noResult_image {
+  width: 400px;
+  height: 250px;
+  margin-bottom: 30px;
+  
+}
+
 @media (min-width: 768px) {
   .container {
     width: 620px;

@@ -44,14 +44,14 @@
   font-weight: 300;
   text-align: center;
   opacity: 0;
-} 
+}
 
   @media (min-resolution: 192dpi) {
     .main_header-bg {
       background-image: url('../../assets/images/mobile/home-header-bg320@2x.jpg');
     }
   }
-  
+
   @media (min-width: 768px) {
     .main_header-bg {
       background-image: url('../../assets/images/tablet/home-header-bg768.jpg');
@@ -64,35 +64,35 @@
     .search-form_input {
     width: 352px;
     }
-  
+
     .search-form {
       text-align: center;
     }
-  
+
     @media (min-resolution: 192dpi) {
       .main_header-bg {
         background-image: url('../../assets/images/tablet/home-header-bg768@2x.jpg');
       }
     }
   }
-  
+
   @media (min-width: 1024px) {
     .main_header-bg {
       background-image: url('../../assets/images/desktop/home-header-bg1024.jpg');
     }
-  
+
     .container {
       width: 876px;
     }
-  
+
     .search-form_input {
       width: 340px;
     }
-  
+
     @media (min-resolution: 192dpi) {
       .main_header-bg {
         background-image: url('../../assets/images/desktop/home-header-bg1024@2x.jpg');
       }
     }
   }
-  
+

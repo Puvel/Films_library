@@ -1,13 +1,17 @@
 import '../../stylesheet/main.css';
-import {
-  renderWatchedAndQueueGalleryList,
-  renderSearchResultGalleryList,
-} from '../mainFilmsList/mainFilmsList';
+import '../pagination/pagination.css';
+import { renderSearchResultGalleryList } from '../mainFilmsList/mainFilmsList';
 import searchButtons from '../../templates/searchBtn.hbs';
 import searchForm from '../../templates/searchForm.hbs';
+import listItemTemplate from '../../templates/listItemTamplate.hbs';
 import { renderHomeGalleryList } from '../mainFilmsList/mainFilmsList';
-import { handleSubmit } from '../searchForm/searchForm';
 import fetchFunction from '../../services/services';
+import { hundleSubmit } from '../searchForm/searchForm';
+import {
+  renderFilmsQueue,
+  renderFilmsWatched,
+} from '../localStorage/renderFilmsLS';
+import storageMethods from '../localStorage/storageMethods';
 
 const navMenu = document.querySelector('.nav__home');
 const logoLink = document.querySelector('.nav__logo');
@@ -24,7 +28,6 @@ const refs = {
   activeLink: document.querySelector('.nav__home'),
   activeLinkLibrary: document.querySelector('.nav__library'),
   cardItem: '',
-  // input: document.querySelector('.search-form_input'),
 };
 
 function navClickHandler(e) {
@@ -33,22 +36,17 @@ function navClickHandler(e) {
     refs.activeLinkLibrary.classList.remove('nav__btn--active');
   }
   e.target.classList.add('nav__btn--active');
-
   refs.mainHeaderBg.classList.remove('main_header-bg-btn');
   refs.mainHeaderBg.classList.add('main_header-bg');
-
   refs.headerBtn.classList.add('unvisible');
-
   refs.headerInput.innerHTML = searchForm();
 
   refs.headerInput.classList.remove('unvisible');
   refs.headerInput.classList.add('visible');
-
   refs.cardItem = document.querySelector('.js-ardItem');
   if (refs.cardItem) {
     refs.cardItem.remove();
   }
-
   if (fetchFunction.searchQuery !== '') {
     renderSearchResultGalleryList();
     const input = document.querySelector('.search-form_input');
@@ -56,6 +54,8 @@ function navClickHandler(e) {
   } else {
     renderHomeGalleryList();
   }
+  refs.formSearch = document.querySelector('#js-form');
+  refs.formSearch.addEventListener('submit', hundleSubmit);
 }
 
 refs.libraryLink.addEventListener('click', renderWatchedAndQueueCollection);
@@ -66,30 +66,30 @@ function renderWatchedAndQueueCollection(e) {
     refs.activeLink.classList.remove('nav__btn--active');
   }
   e.target.classList.add('nav__btn--active');
-
   refs.mainHeaderBg.classList.remove('main_header-bg');
   refs.mainHeaderBg.classList.add('main_header-bg-btn');
-
   refs.headerBtn.classList.remove('unvisible');
-
   refs.headerInput.classList.remove('visible');
   refs.headerInput.classList.add('unvisible');
-
   const markup = searchButtons();
   refs.headerBtn.innerHTML = markup;
+
+  renderFilmsQueue();
+
+  const watchBtn = document.querySelector('#watched-btn');
+  watchBtn.addEventListener('click', renderFilmsWatched);
+
+  const queueBtn = document.querySelector('#watch-later-btn');
+  queueBtn.addEventListener('click', renderFilmsQueue);
 }
 
 function logoClickHandler() {
   refs.mainHeaderBg.classList.remove('main_header-bg-btn');
   refs.mainHeaderBg.classList.add('main_header-bg');
-
   refs.headerBtn.classList.add('unvisible');
-
   refs.headerInput.innerHTML = searchForm();
-
   refs.headerInput.classList.remove('unvisible');
   refs.headerInput.classList.add('visible');
-
   refs.cardItem = document.querySelector('.js-ardItem');
   if (refs.cardItem) {
     refs.cardItem.remove();
@@ -98,4 +98,6 @@ function logoClickHandler() {
   renderHomeGalleryList();
   refs.activeLinkLibrary.classList.remove('nav__btn--active');
   refs.activeLink.classList.add('nav__btn--active');
+  refs.formSearch = document.querySelector('#js-form');
+  refs.formSearch.addEventListener('submit', hundleSubmit);
 }
