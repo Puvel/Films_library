@@ -3,6 +3,9 @@ import libraryListItemTemplate from '../../templates/libraryListItemTemplate.hbs
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
 import Pagination from '../pagination/pagination';
 import notFoundImg from '../../assets/images/notFound.jpg';
+import spinner from '../spinner/spinner';
+import noResult from '../../templates/noResult.hbs';
+import noRes from '../../assets/images/noResult.jpg';
 
 const refs = {
   mainSection: document.querySelector('.main_section'),
@@ -14,11 +17,13 @@ const refs = {
 renderHomeGalleryList();
 
 export function renderHomeGalleryList() {
+  spinner.show();
   Promise.all([
     apiServicesFetch.fetchPopularityApi(),
     apiServicesFetch.fetchGenresListApi(),
   ])
     .then(result => {
+      spinner.hide();
       getResultFromFetchApi(result);
       const films = [...result[0]];
       refs.galleryList.innerHTML = markup(films);
@@ -32,11 +37,13 @@ export function renderHomeGalleryList() {
 }
 
 export function renderWatchedAndQueueGalleryList() {
+  spinner.show();
   Promise.all([
     apiServicesFetch.fetchPopularityApi(),
     apiServicesFetch.fetchGenresListApi(),
   ])
     .then(result => {
+      spinner.hide();
       getResultFromFetchApi(result);
       const films = [...result[0]];
       function markup(films) {
@@ -58,12 +65,13 @@ export function renderWatchedAndQueueGalleryList() {
 }
 
 export function renderSearchResultGalleryList() {
+  spinner.show();
   Promise.all([
     apiServicesFetch.fetchMoviesSearchApi(),
     apiServicesFetch.fetchGenresListApi(),
   ])
     .then(result => {
-      console.log(result)
+      spinner.hide();
       getResultFromFetchApi(result);
       const films = [...result[0]];
       refs.galleryList.innerHTML = markup(films);
@@ -108,6 +116,12 @@ function markup(films) {
         changeItem = {
           ...item,
           release_date: item.release_date.slice(0, 4),
+          notFoundImg,
+        };
+      } else {
+        changeItem = {
+          ...item,
+          release_date: 'unknown',
           notFoundImg,
         };
       }
