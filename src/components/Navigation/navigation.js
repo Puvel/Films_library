@@ -6,8 +6,8 @@ import {
 import searchButtons from '../../templates/searchBtn.hbs';
 import searchForm from '../../templates/searchForm.hbs';
 import { renderHomeGalleryList } from '../mainFilmsList/mainFilmsList';
-import { handleSubmit } from '../searchForm/searchForm';
 import fetchFunction from '../../services/services';
+import { hundleSubmit } from '../searchForm/searchForm';
 
 const navMenu = document.querySelector('.nav__home');
 const logoLink = document.querySelector('.nav__logo');
@@ -24,7 +24,6 @@ const refs = {
   activeLink: document.querySelector('.nav__home'),
   activeLinkLibrary: document.querySelector('.nav__library'),
   cardItem: '',
-  // input: document.querySelector('.search-form_input'),
 };
 
 function navClickHandler(e) {
@@ -38,8 +37,8 @@ function navClickHandler(e) {
   refs.mainHeaderBg.classList.add('main_header-bg');
 
   refs.headerBtn.classList.add('unvisible');
-
   refs.headerInput.innerHTML = searchForm();
+  // renderForm()
 
   refs.headerInput.classList.remove('unvisible');
   refs.headerInput.classList.add('visible');
@@ -56,6 +55,10 @@ function navClickHandler(e) {
   } else {
     renderHomeGalleryList();
   }
+  refs.formSearch = document.querySelector('#js-form');
+  console.log(refs.formSearch);
+  console.log(hundleSubmit);
+  refs.formSearch.addEventListener('input', hundleSubmit);
 }
 
 refs.libraryLink.addEventListener('click', renderWatchedAndQueueCollection);
@@ -98,4 +101,9 @@ function logoClickHandler() {
   renderHomeGalleryList();
   refs.activeLinkLibrary.classList.remove('nav__btn--active');
   refs.activeLink.classList.add('nav__btn--active');
+
+  refs.formSearch = document.querySelector('#js-form');
+  console.log(refs.formSearch);
+  console.log(hundleSubmit);
+  refs.formSearch.addEventListener('input', hundleSubmit);
 }
