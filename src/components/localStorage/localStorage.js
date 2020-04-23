@@ -12,10 +12,10 @@ export function toggleQueue() {
   storageMethods.save('queue', filmQueueList);
   buttonStatus();
 }
-
 export function toggleWatched() {
   let filmWatchedList = [];
   filmWatchedList.push(...storageMethods.load('watched'));
+
   if (filmWatchedList.find(film => film.id === currentCard.id)) {
     filmWatchedList = filmWatchedList.filter(
       film => film.id !== currentCard.id,
