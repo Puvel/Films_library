@@ -4,7 +4,10 @@ import { renderSearchResultGalleryList } from '../mainFilmsList/mainFilmsList';
 import searchButtons from '../../templates/searchBtn.hbs';
 import searchForm from '../../templates/searchForm.hbs';
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
-import { renderHomeGalleryList } from '../mainFilmsList/mainFilmsList';
+import {
+  renderHomeGalleryList,
+  renderPrevGalleryList,
+} from '../mainFilmsList/mainFilmsList';
 import fetchFunction from '../../services/services';
 import { hundleSubmit } from '../searchForm/searchForm';
 import {
@@ -12,6 +15,8 @@ import {
   renderFilmsWatched,
 } from '../localStorage/renderFilmsLS';
 import storageMethods from '../localStorage/storageMethods';
+import services from '../../services/services';
+import { init } from '../pagination/pagination';
 
 const navMenu = document.querySelector('.nav__home');
 const logoLink = document.querySelector('.nav__logo');
@@ -52,7 +57,7 @@ function navClickHandler(e) {
     const input = document.querySelector('.search-form_input');
     input.value = fetchFunction.searchQuery;
   } else {
-    renderHomeGalleryList();
+    renderPrevGalleryList();
   }
   refs.formSearch = document.querySelector('#js-form');
   refs.formSearch.addEventListener('submit', hundleSubmit);
@@ -95,7 +100,11 @@ function logoClickHandler() {
     refs.cardItem.remove();
   }
 
+  services.page = 1;
   renderHomeGalleryList();
+  // const divPagination = document.querySelector('#pagination');
+  // divPagination.classList.remove('pagination-none');
+
   refs.activeLinkLibrary.classList.remove('nav__btn--active');
   refs.activeLink.classList.add('nav__btn--active');
   refs.formSearch = document.querySelector('#js-form');

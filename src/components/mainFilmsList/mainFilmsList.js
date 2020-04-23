@@ -1,8 +1,9 @@
 import apiServicesFetch from '../../services/services';
 import libraryListItemTemplate from '../../templates/libraryListItemTemplate.hbs';
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
-import Pagination from '../pagination/pagination';
+import Pagination, { init } from '../pagination/pagination';
 import notFoundImg from '../../assets/images/notFound.jpg';
+import services from '../../services/services'
 
 const refs = {
   mainSection: document.querySelector('.main_section'),
@@ -14,6 +15,25 @@ const refs = {
 renderHomeGalleryList();
 
 export function renderHomeGalleryList() {
+  Promise.all([
+    apiServicesFetch.fetchPopularityApi(),
+    apiServicesFetch.fetchGenresListApi(),
+  ])
+    .then(result => {
+      getResultFromFetchApi(result);
+      const films = [...result[0]];
+      refs.galleryList.innerHTML = markup(films);
+      if (films.length % 2 === 0) {
+        refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
+        const arrow = document.querySelector('.arrow');
+        arrow.addEventListener('click', Pagination.Next);
+      }
+      // services.page = 1
+    })
+    .catch(err => console.log(err));
+}
+
+export function renderPrevGalleryList() {
   Promise.all([
     apiServicesFetch.fetchPopularityApi(),
     apiServicesFetch.fetchGenresListApi(),
