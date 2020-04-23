@@ -1,7 +1,7 @@
 <li class="gallery-list__item" data-id="{{id}}">
   <div class="item-wrap">
     {{#if poster_path}}
-    <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" width="280" height="403"
+    <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" width="280" height="403"
       class="gallery-list__item_image" />
     {{else}}
     <img
@@ -14,7 +14,9 @@
   </div>
   <h3 class="gallery-list__item_title">{{title}}</h3>
   <div class="filmInfo">
-    <p class="filmInfo__genre">{{genre_ids}}
+    {{#each genres}}
+    <p class="filmInfo__genre">{{this.name}}
+       {{/each}}
       <span class="filmInfo__slash">|</span>
       <span class="filmInfo__year">{{release_date}}</span>
       <span class="filmInfo__popularity">{{vote_average}}</span>
