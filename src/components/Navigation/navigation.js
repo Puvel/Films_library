@@ -39,21 +39,17 @@ function navClickHandler(e) {
     refs.activeLinkLibrary.classList.remove('nav__btn--active');
   }
   e.target.classList.add('nav__btn--active');
-
   refs.mainHeaderBg.classList.remove('main_header-bg-btn');
   refs.mainHeaderBg.classList.add('main_header-bg');
-
   refs.headerBtn.classList.add('unvisible');
   refs.headerInput.innerHTML = searchForm();
 
   refs.headerInput.classList.remove('unvisible');
   refs.headerInput.classList.add('visible');
-
   refs.cardItem = document.querySelector('.js-ardItem');
   if (refs.cardItem) {
     refs.cardItem.remove();
   }
-
   if (fetchFunction.searchQuery !== '') {
     renderSearchResultGalleryList();
     const input = document.querySelector('.search-form_input');
@@ -73,15 +69,11 @@ function renderWatchedAndQueueCollection(e) {
     refs.activeLink.classList.remove('nav__btn--active');
   }
   e.target.classList.add('nav__btn--active');
-
   refs.mainHeaderBg.classList.remove('main_header-bg');
   refs.mainHeaderBg.classList.add('main_header-bg-btn');
-
   refs.headerBtn.classList.remove('unvisible');
-
   refs.headerInput.classList.remove('visible');
   refs.headerInput.classList.add('unvisible');
-
   const markup = searchButtons();
   refs.headerBtn.innerHTML = markup;
 
@@ -97,14 +89,10 @@ function renderWatchedAndQueueCollection(e) {
 function logoClickHandler() {
   refs.mainHeaderBg.classList.remove('main_header-bg-btn');
   refs.mainHeaderBg.classList.add('main_header-bg');
-
   refs.headerBtn.classList.add('unvisible');
-
   refs.headerInput.innerHTML = searchForm();
-
   refs.headerInput.classList.remove('unvisible');
   refs.headerInput.classList.add('visible');
-
   refs.cardItem = document.querySelector('.js-ardItem');
   if (refs.cardItem) {
     refs.cardItem.remove();
@@ -113,7 +101,6 @@ function logoClickHandler() {
   renderHomeGalleryList();
   refs.activeLinkLibrary.classList.remove('nav__btn--active');
   refs.activeLink.classList.add('nav__btn--active');
-
   refs.formSearch = document.querySelector('#js-form');
   refs.formSearch.addEventListener('input', hundleSubmit);
 }
