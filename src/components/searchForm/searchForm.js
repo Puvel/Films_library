@@ -2,6 +2,7 @@ import searchForm from '../../templates/searchForm.hbs';
 import './searchForm.css';
 import apiServicesFetch from '../../services/services';
 import { renderSearchResultGalleryList } from '../mainFilmsList/mainFilmsList';
+import debounce from 'lodash.debounce';
 
 const refs = {
   input: document.querySelector('.search-form_input'),
@@ -16,17 +17,13 @@ refs.formSearch = document.querySelector('#js-form');
 
 refs.formSearch.addEventListener('input', hundleSubmit);
 
-console.log(refs.formSearch);
 export function hundleSubmit(e) {
   e.preventDefault();
 
   apiServicesFetch.page = 1;
   const inputQuery = e.currentTarget.elements.query.value;
 
-  console.log(inputQuery);
   apiServicesFetch.searchQuery = inputQuery;
-  
+
   renderSearchResultGalleryList();
 }
-
-
