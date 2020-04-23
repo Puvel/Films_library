@@ -67,6 +67,7 @@ export function renderSearchResultGalleryList() {
         refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
         const arrow = document.querySelector('.arrow');
         arrow.addEventListener('click', Pagination.Next);
+        
       }
     })
     .catch(err => console.log(err));

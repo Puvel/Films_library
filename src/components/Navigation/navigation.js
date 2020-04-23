@@ -1,8 +1,12 @@
 import '../../stylesheet/main.css';
-import { renderWatchedAndQueueGalleryList } from '../mainFilmsList/mainFilmsList';
+import {
+  renderWatchedAndQueueGalleryList,
+  renderSearchResultGalleryList,
+} from '../mainFilmsList/mainFilmsList';
 import searchButtons from '../../templates/searchBtn.hbs';
 import searchForm from '../../templates/searchForm.hbs';
 import { renderHomeGalleryList } from '../mainFilmsList/mainFilmsList';
+import { handleSubmit } from '../searchForm/searchForm';
 import fetchFunction from '../../services/services';
 
 const navMenu = document.querySelector('.nav__home');
@@ -20,6 +24,7 @@ const refs = {
   activeLink: document.querySelector('.nav__home'),
   activeLinkLibrary: document.querySelector('.nav__library'),
   cardItem: '',
+  // input: document.querySelector('.search-form_input'),
 };
 
 function navClickHandler(e) {
@@ -44,7 +49,13 @@ function navClickHandler(e) {
     refs.cardItem.remove();
   }
 
-  renderHomeGalleryList();
+  if (fetchFunction.searchQuery !== '') {
+    renderSearchResultGalleryList();
+    const input = document.querySelector('.search-form_input');
+    input.value = fetchFunction.searchQuery;
+  } else {
+    renderHomeGalleryList();
+  }
 }
 
 refs.libraryLink.addEventListener('click', renderWatchedAndQueueCollection);
