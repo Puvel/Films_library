@@ -12,20 +12,24 @@ export function renderFilmsQueue() {
 
   let libraryQueueList = [];
   let localStorageInfoList = storageMethods.load('queue');
-  if (localStorageInfoList  && localStorageInfoList.length !==0) {
+
+  if (localStorageInfoList && localStorageInfoList.length !== 0) {
     libraryQueueList.push(...storageMethods.load('queue'));
     const divPagination = document.querySelector('#pagination');
-    // divPagination.classList.add('pagination-none');
+
     divPagination.innerHTML = ' ';
 
-    const murkup = libraryQueueList.map(card => listItemTemplate(card)).join('');
+    const murkup = libraryQueueList
+      .map(card => listItemTemplate(card))
+      .join('');
     const renderUl = document.querySelector('.js-gallery_list');
     renderUl.innerHTML = murkup;
   } else {
     const renderUl = document.querySelector('.js-gallery_list');
     renderUl.innerHTML = 'Oooops...No result for your request!!!';
     const divPagination = document.querySelector('#pagination');
-    // divPagination.classList.add('pagination-none');
+
+
 
     const errorInLibrary = document.createElement('p');
     errorInLibrary.textContent = 'Oooops...No result for your request!!!';
@@ -46,17 +50,18 @@ export function renderFilmsWatched() {
   if (localStorageInfoList && localStorageInfoList.length !== 0) {
     libraryWatchList.push(...storageMethods.load('watched'));
     const divPagination = document.querySelector('#pagination');
-    // divPagination.classList.add('pagination-none');
+
     divPagination.innerHTML = ' ';
 
     const murkup = libraryWatchList.map(card => listItemTemplate(card)).join('');
+
     const renderUl = document.querySelector('.js-gallery_list');
     renderUl.innerHTML = murkup;
   } else {
     const renderUl = document.querySelector('.js-gallery_list');
     renderUl.innerHTML = 'Oooops...No result for your request!!!';
     const divPagination = document.querySelector('#pagination');
-    // divPagination.classList.add('pagination-none');
+
 
     const errorInLibrary = document.createElement('p');
     errorInLibrary.textContent = 'Oooops...No result for your request!!!';

@@ -78,7 +78,10 @@ function renderWatchedAndQueueCollection(e) {
   refs.headerInput.classList.add('unvisible');
   const markup = searchButtons();
   refs.headerBtn.innerHTML = markup;
-
+  refs.cardItem = document.querySelector('.js-ardItem');
+  if (refs.cardItem) {
+    refs.cardItem.remove();
+  }
   renderFilmsQueue();
 
   const watchBtn = document.querySelector('#watched-btn');

@@ -18,7 +18,6 @@ const refs = {
   paginationContainer: document.querySelector('#pagination'),
   activeLink: document.querySelector('.nav__home'),
   activeLinkLibrary: document.querySelector('.nav__library'),
-
 };
 
 refs.galleryList.addEventListener('click', renderCardFilm);
@@ -33,14 +32,14 @@ function renderCardFilm(e) {
     refs.mainHeaderBg.classList.add('main_header-bg-card');
     refs.headerInput.innerHTML = '';
     refs.headerBtn.innerHTML = '';
-    refs.activeLinkLibrary.classList.remove('nav__btn--active')
+    refs.activeLinkLibrary.classList.remove('nav__btn--active');
     refs.activeLink.classList.remove('nav__btn--active');
 
     createCardFilm(id);
   }
 }
 
-const container = document.querySelector('.main_section');
+const container = document.querySelector('.cardItemList');
 export let currentCard = {};
 function createCardFilm(id) {
   services
