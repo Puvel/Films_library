@@ -7,6 +7,8 @@ import notFoundImg from '../../assets/images/notFound.jpg';
 const refs = {
   mainSection: document.querySelector('.main_section'),
   galleryList: document.querySelector('.js-gallery_list'),
+  queueBtn: document.querySelector("#watch-later-btn"),
+  watchBtn: document.querySelector("#watch-btn"),
 };
 
 renderHomeGalleryList();
