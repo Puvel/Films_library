@@ -5,3 +5,4 @@ import './components/cardItem/cardItem.css';
 import './components/cardItem/cardItem';
 import './components/mainFilmsList/mainFilmsList.js';
 import './components/searchForm/searchForm';
+import './components/localStorage/localStorage';

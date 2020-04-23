@@ -12,8 +12,7 @@
 
 .gallery-list__item_image {
   padding-bottom: 12px;
-  width: 272px;
-  height: 402px;
+
 }
 
 
@@ -57,11 +56,14 @@
   text-align: center;
 }
 
+
 /* =============OVERLAY============== */
 
 .item-wrap {
   position: relative;
   margin: 0;
+  width: 272px;
+  height: 402px;
 }
 
 .overlay {
@@ -137,12 +139,13 @@
   .gallery_list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: unset;
+    justify-content: space-between;
+    /* justify-content: unset; */
   }
 
-  .gallery-list__item:not(:nth-last-child(3n)) {
+  /* .gallery-list__item:not(:nth-last-child(3n)) {
     margin-right: 30px;
-  }
+  } */
 
   .gallery-list__item,
   .filmInfo,
@@ -173,4 +176,72 @@
     opacity: 1;
     visibility: visible;
   }
+
+
+  /* ================ARROW========================= */
+
+  .gallery-list__item {
+    position: relative;
+  }
+
+
+  .arrow {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    top: 8%;
+    left: 4%;
+    margin: 100px 0 0 100px;
+    width: 100px;
+    height: 100px;
+    border: solid 6px #999;
+    border-radius: 100%;
+    z-index: 1;
+    transition: all .2s linear;
+  }
+
+  .arrow:before,
+  .arrow:after {
+    content: "";
+    position: absolute;
+    width: 35%;
+    height: 10%;
+    top: 41%;
+    left: 55%;
+    background: #999;
+    z-index: 2;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: all .2s linear;
+  }
+
+  .arrow:after {
+    z-index: 3;
+    top: 59%;
+    left: 55%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .arrow:hover {
+    border-color: blueviolet;
+    border: solid 8px var(--main-decoration-color);
+  }
+
+  .arrow:hover::after,
+  .arrow:hover::before {
+    background: var(--main-decoration-color);
+    border-color: var(--main-decoration-color);
+  }
+
+  .arrow:hover:active {
+    border-color: var(--main-decoration-color);
+
+  }
+
+  .arrow:hover:active::before,
+  .arrow:hover:active::after {
+    background: var(--main-decoration-color);
+
+  }
+
+
 }

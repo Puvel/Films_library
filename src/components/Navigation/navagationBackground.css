@@ -1,0 +1,22 @@
+.main_header-bg-card {
+    background-image: url('../../assets/images/mobile/details-header-bg320.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+.main_header-bg {
+    background-image: url('../../assets/images/mobile/home-header-bg320.jpg');
+}
+
+.main_header-bg-btn {
+    background-image: url('../../assets/images/mobile/library-header-bg320.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+
+  
