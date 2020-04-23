@@ -3,26 +3,37 @@ import storageMethods from './storageMethods';
 
 export function toggleQueue() {
   let filmQueueList = [];
-  filmQueueList.push(...storageMethods.load('queue'));
-  if (filmQueueList.find(film => film.id === currentCard.id)) {
-    filmQueueList = filmQueueList.filter(film => film.id !== currentCard.id);
+  const queue = storageMethods.load('queue');
+  if (queue) {
+    filmQueueList.push(...queue);
+    if (filmQueueList.find(film => film.id === currentCard.id)) {
+      filmQueueList = filmQueueList.filter(film => film.id !== currentCard.id);
+    } else {
+      filmQueueList.push(currentCard);
+    }
   } else {
     filmQueueList.push(currentCard);
   }
+
   storageMethods.save('queue', filmQueueList);
   buttonStatus();
 }
-
 export function toggleWatched() {
   let filmWatchedList = [];
-  filmWatchedList.push(...storageMethods.load('watched'));
-  if (filmWatchedList.find(film => film.id === currentCard.id)) {
-    filmWatchedList = filmWatchedList.filter(
-      film => film.id !== currentCard.id,
-    );
+  const watched = storageMethods.load('watched');
+  if (watched) {
+    filmWatchedList.push(...watched);
+    if (filmWatchedList.find(film => film.id === currentCard.id)) {
+      filmWatchedList = filmWatchedList.filter(
+        film => film.id !== currentCard.id,
+      );
+    } else {
+      filmWatchedList.push(currentCard);
+    }
   } else {
     filmWatchedList.push(currentCard);
   }
+
   storageMethods.save('watched', filmWatchedList);
   buttonStatus();
 }
@@ -48,5 +59,9 @@ export function buttonStatus() {
   }
 }
 function findId(string) {
-  return storageMethods.load(string).find(film => film.id === currentCard.id);
+  const result = storageMethods.load(string);
+  if (!result) {
+    return;
+  }
+  return result.find(film => film.id === currentCard.id);
 }
