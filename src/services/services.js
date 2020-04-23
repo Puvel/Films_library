@@ -13,7 +13,7 @@ export default {
     const movieSearchPrmts = `?api_key=${apiKey}&language=en-US&query=${this.query}&page=${this.page}&per_page=20&include_adult=false`;
     return fetch(baseUrl + movieSearchUrl + movieSearchPrmts)
       .then(res => res.json())
-      .then(data => {npm 
+      .then(data => {
         this.totalPages = data.total_pages;
         init();
         return data.results;
