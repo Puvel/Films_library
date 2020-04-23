@@ -7,8 +7,8 @@ import notFoundImg from '../../assets/images/notFound.jpg';
 const refs = {
   mainSection: document.querySelector('.main_section'),
   galleryList: document.querySelector('.js-gallery_list'),
-  queueBtn: document.querySelector("#watch-later-btn"),
-  watchBtn: document.querySelector("#watch-btn"),
+  queueBtn: document.querySelector('#watch-later-btn'),
+  watchBtn: document.querySelector('#watch-btn'),
 };
 
 renderHomeGalleryList();
@@ -71,7 +71,6 @@ export function renderSearchResultGalleryList() {
         refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
         const arrow = document.querySelector('.arrow');
         arrow.addEventListener('click', Pagination.Next);
-
       }
     })
     .catch(err => console.log(err));

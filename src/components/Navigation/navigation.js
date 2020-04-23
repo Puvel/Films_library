@@ -4,10 +4,13 @@ import { renderSearchResultGalleryList } from '../mainFilmsList/mainFilmsList';
 import searchButtons from '../../templates/searchBtn.hbs';
 import searchForm from '../../templates/searchForm.hbs';
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
-
 import { renderHomeGalleryList } from '../mainFilmsList/mainFilmsList';
 import fetchFunction from '../../services/services';
 import { hundleSubmit } from '../searchForm/searchForm';
+import {
+  renderFilmsQueue,
+  renderFilmsWatched,
+} from '../localStorage/renderFilmsLS';
 import storageMethods from '../localStorage/storageMethods';
 
 const navMenu = document.querySelector('.nav__home');
@@ -37,6 +40,7 @@ function navClickHandler(e) {
   refs.mainHeaderBg.classList.add('main_header-bg');
   refs.headerBtn.classList.add('unvisible');
   refs.headerInput.innerHTML = searchForm();
+
   refs.headerInput.classList.remove('unvisible');
   refs.headerInput.classList.add('visible');
   refs.cardItem = document.querySelector('.js-ardItem');
@@ -77,63 +81,6 @@ function renderWatchedAndQueueCollection(e) {
 
   const queueBtn = document.querySelector('#watch-later-btn');
   queueBtn.addEventListener('click', renderFilmsQueue);
-}
-
-function renderFilmsQueue() {
-  const queueBtn = document.querySelector('#watch-later-btn');
-  queueBtn.classList.add('isActive');
-
-  let libraryQueueList = [];
-  let localStorageInfoList = localStorage.getItem('queue');
-  if (localStorageInfoList !== null) {
-    libraryQueueList.push(...storageMethods.load('queue'));
-    const divPagination = document.querySelector('#pagination');
-    divPagination.classList.add('pagination-none');
-    divPagination.innerHTML = ' ';
-
-    const murkup = libraryQueueList.map(card => listItemTemplate(card)).join('');
-    const renderUl = document.querySelector('.js-gallery_list');
-    renderUl.innerHTML = murkup;
-  } else {
-    const renderUl = document.querySelector('.js-gallery_list');
-    renderUl.innerHTML = 'Oooops...No result for your request!!!';
-    const divPagination = document.querySelector('#pagination');
-    divPagination.classList.add('pagination-none');
-
-    const errorInLibrary = document.createElement('p');
-    errorInLibrary.textContent = 'Oooops...No result for your request!!!';
-    renderUl.style.fontSize = '50px';
-    renderUl.style.marginTop = '100px';
-
-    divPagination.innerHTML = ' ';
-  }
-}
-
-function renderFilmsWatched() {
-  let libraryWatchList = [];
-  let localStorageInfoList = localStorage.getItem('watched');
-  if (localStorageInfoList !== null) {
-    libraryWatchList.push(...storageMethods.load('watched'));
-    const divPagination = document.querySelector('#pagination');
-    divPagination.classList.add('pagination-none');
-    divPagination.innerHTML = ' ';
-
-    const murkup = libraryWatchList.map(card => listItemTemplate(card)).join('');
-    const renderUl = document.querySelector('.js-gallery_list');
-    renderUl.innerHTML = murkup;
-  } else {
-    const renderUl = document.querySelector('.js-gallery_list');
-    renderUl.innerHTML = 'Oooops...No result for your request!!!';
-    const divPagination = document.querySelector('#pagination');
-    divPagination.classList.add('pagination-none');
-
-    const errorInLibrary = document.createElement('p');
-    errorInLibrary.textContent = 'Oooops...No result for your request!!!';
-    renderUl.style.fontSize = '50px';
-    renderUl.style.marginTop = '100px';
-
-    divPagination.innerHTML = ' ';
-  }
 }
 
 function logoClickHandler() {
