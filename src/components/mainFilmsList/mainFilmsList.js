@@ -51,6 +51,7 @@ export function renderWatchedAndQueueGalleryList() {
       }
       refs.galleryList.innerHTML = markup(films);
     })
+
     .catch(err => console.log(err));
 }
 
@@ -67,7 +68,10 @@ export function renderSearchResultGalleryList() {
         refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
         const arrow = document.querySelector('.arrow');
         arrow.addEventListener('click', Pagination.Next);
-        
+        const navMenu = document.querySelector('.nav__home');
+  // console.log(navMenu);
+  navMenu.textContent = "";
+  navMenu.textContent = "GO BACK"
       }
     })
     .catch(err => console.log(err));
