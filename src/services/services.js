@@ -14,7 +14,6 @@ export default {
     return fetch(baseUrl + movieSearchUrl + movieSearchPrmts)
       .then(res => res.json())
       .then(data => {
-        this.page = 1;
         this.totalPages = data.total_pages;
         init();
         return data.results;
@@ -54,6 +53,7 @@ export default {
     const popularityPrmts = `?api_key=${apiKey}&language=en-US&page=${this.page}`;
     return fetch(baseUrl + popularityUrl + popularityPrmts)
       .then(res => res.json())
+
       .then(data => {
         this.totalPages = data.total_pages;
         init();
