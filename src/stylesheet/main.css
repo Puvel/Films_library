@@ -4,6 +4,7 @@
 @import '../components/searchForm/searchForm.css';
 @import '../components/searchBtn/searchBtn.css';
 @import '../components/mainFilmsList/galleryList.css';
+@import '../components/team/footter.css'
 
 html {
   box-sizing: border-box;
