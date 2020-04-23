@@ -1,17 +1,23 @@
 <li class="gallery-list__item" data-id="{{id}}">
   <div class="item-wrap">
+    {{#if poster_path}}
     <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" width="280" height="403"
       class="gallery-list__item_image" />
+    {{else}}
+    <img
+      src="https://lh3.googleusercontent.com/proxy/UQx5gnBHV9Z815aUchOv4sc7uO2-l-7QhE3fcOGKsk2vHcPtJ_m8ZB4paShzRBSsKxUy6FwQhFnkgYWh7HskNyXA0imNVi-p"
+      alt="{{title}}" width="280" height="403" class="gallery-list__item_image" />
+    {{/if}}
     <div class="overlay">
       <button class="overlay__button">READ ABOUT</button>
     </div>
   </div>
-    <h3 class="gallery-list__item_title">{{title}}</h3>
-     <div class="filmInfo">
-          <p class="filmInfo__genre">{{genre_ids}}
-          <span class="filmInfo__slash">|</span>
-          <span class="filmInfo__year">{{release_date}}</span>
-          <span class="filmInfo__popularity">{{vote_average}}</span>
-          </p>
-    </div>
+  <h3 class="gallery-list__item_title">{{title}}</h3>
+  <div class="filmInfo">
+    <p class="filmInfo__genre">{{genre_ids}}
+      <span class="filmInfo__slash">|</span>
+      <span class="filmInfo__year">{{release_date}}</span>
+      <span class="filmInfo__popularity">{{vote_average}}</span>
+    </p>
+  </div>
 </li>

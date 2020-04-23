@@ -1,6 +1,8 @@
 import './cardItem.css';
+import '../Navigation/navagationBackground.css';
 import services from '../../services/services';
 import filmCardTemplate from '../../templates/filmCardTemplate.hbs';
+import notFoundImg from '../../assets/images/notFound.jpg';
 import {
   toggleQueue,
   toggleWatched,
@@ -65,7 +67,8 @@ function createCardFilm(id) {
     .catch(err => console.log(err));
 
   function insertCardItems(film) {
-    const markup = filmCardTemplate(film);
+    const copyFilm = { ...film, notFoundImg };
+    const markup = filmCardTemplate(copyFilm);
 
     refs.galleryList.innerHTML = '';
     refs.paginationContainer.innerHTML = '';
