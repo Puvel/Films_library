@@ -1,7 +1,13 @@
 <ul class="cardItem js-ardItem">
     <li class="cardItem__list container">
         <div class="cardItem__image">
+            {{#if poster_path}}
             <img class="image" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" />
+            {{else}}
+            <img src="{{notFoundImg}}"
+                alt="{{title}}" />
+            {{/if}}
+
         </div>
         <div class=" cardItem__wrapper">
             <h2 class="cardItem__name">{{title}}</h2>
@@ -27,10 +33,10 @@
                 {{overview}}
             </p>
             <div class="cardItem__listButton">
-                <button class="cardItem__button" id="js-addWatchedButton">
+                <button class="cardItem__button" id="js-WatchedButton">
                     Add to watched
                 </button>
-                <button class="cardItem__button" id="js-addQueueButton">
+                <button class="cardItem__button" id="js-QueueButton">
                     Add to queue
                 </button>
             </div>
