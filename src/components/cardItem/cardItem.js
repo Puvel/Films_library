@@ -13,6 +13,7 @@ function renderCardFilm(e) {
     const button = e.target;
     const li = button.closest('.gallery-list__item');
     const id = li.dataset.id;
+    
 
     createCardFilm(id);
   } 

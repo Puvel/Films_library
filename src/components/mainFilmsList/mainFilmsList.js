@@ -112,4 +112,4 @@ function markup(films) {
   return ul;
 }
 
-export default renderHomeGalleryList;
+// export default renderHomeGalleryList;
