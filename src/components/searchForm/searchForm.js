@@ -16,17 +16,13 @@ refs.formSearch = document.querySelector('#js-form');
 refs.formSearch.addEventListener('input', hundleSubmit);
 
 
-function hundleSubmit(e) {
+export function hundleSubmit(e) {
   e.preventDefault();
   apiServicesFetch.page = 1;
   const inputQuery = e.currentTarget.elements.query.value;
   apiServicesFetch.searchQuery = inputQuery;
+  
   renderSearchResultGalleryList();
 }
 
-function nextButtonTemplate() {
-  return `
-  <li class="gallery-list__item">
-  <span class="arrow"></span>
-</li>`;
-}
+
