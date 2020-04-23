@@ -58,7 +58,7 @@ function navClickHandler(e) {
   refs.formSearch = document.querySelector('#js-form');
   console.log(refs.formSearch);
   console.log(hundleSubmit);
-  refs.formSearch.addEventListener('input', hundleSubmit);
+  refs.formSearch.addEventListener('submit', hundleSubmit);
 }
 
 refs.libraryLink.addEventListener('click', renderWatchedAndQueueCollection);
@@ -103,7 +103,5 @@ function logoClickHandler() {
   refs.activeLink.classList.add('nav__btn--active');
 
   refs.formSearch = document.querySelector('#js-form');
-  console.log(refs.formSearch);
-  console.log(hundleSubmit);
-  refs.formSearch.addEventListener('input', hundleSubmit);
+  refs.formSearch.addEventListener('submit', hundleSubmit);
 }
