@@ -1,9 +1,10 @@
 import '../../stylesheet/main.css';
-import { renderWatchedAndQueueGalleryList } from '../mainFilmsList/mainFilmsList';
+// import { renderWatchedAndQueueGalleryList } from '../mainFilmsList/mainFilmsList';
 import searchButtons from '../../templates/searchBtn.hbs';
 import searchForm from '../../templates/searchForm.hbs';
 import { renderHomeGalleryList } from '../mainFilmsList/mainFilmsList';
-import fetchFunction from '../../services/services';
+// import fetchFunction from '../../services/services';
+
 
 const navMenu = document.querySelector('.nav__home');
 const logoLink = document.querySelector('.nav__logo');
