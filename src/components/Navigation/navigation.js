@@ -7,12 +7,13 @@ import {
 import searchButtons from '../../templates/searchBtn.hbs';
 import searchForm from '../../templates/searchForm.hbs';
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
-// import filmCardTemplate from '../../templates/searchForm.hbs';
-
 import { renderHomeGalleryList } from '../mainFilmsList/mainFilmsList';
 import fetchFunction from '../../services/services';
 import { hundleSubmit } from '../searchForm/searchForm';
-// import {renderFilmsQueue} from '../localStorage/renderFilmsLS'
+import {
+  renderFilmsQueue,
+  renderFilmsWatched,
+} from '../localStorage/renderFilmsLS';
 import storageMethods from '../localStorage/storageMethods';
 
 const navMenu = document.querySelector('.nav__home');
@@ -44,7 +45,6 @@ function navClickHandler(e) {
 
   refs.headerBtn.classList.add('unvisible');
   refs.headerInput.innerHTML = searchForm();
-  // renderForm()
 
   refs.headerInput.classList.remove('unvisible');
   refs.headerInput.classList.add('visible');
@@ -86,77 +86,12 @@ function renderWatchedAndQueueCollection(e) {
   refs.headerBtn.innerHTML = markup;
 
   renderFilmsQueue();
-  
+
   const watchBtn = document.querySelector('#watched-btn');
   watchBtn.addEventListener('click', renderFilmsWatched);
 
   const queueBtn = document.querySelector('#watch-later-btn');
   queueBtn.addEventListener('click', renderFilmsQueue);
-}
-
-function renderFilmsQueue() {
-  const queueBtn = document.querySelector('#watch-later-btn');
-  queueBtn.classList.add('isActive');
-  
-
-  let libraryQueueList = [];
-  let localStorageInfoList = localStorage.getItem('queue');
-  if (localStorageInfoList !== null) {
-    libraryQueueList.push(...storageMethods.load('queue'));
-    const divPagination = document.querySelector('#pagination');
-    divPagination.classList.add('pagination-none');
-    divPagination.innerHTML = ' ';
-
-    const murkup = libraryQueueList.map(card => listItemTemplate(card));
-    const renderUl = document.querySelector('.js-gallery_list');
-    renderUl.innerHTML = murkup;
-  } else {
-    const renderUl = document.querySelector('.js-gallery_list');
-    renderUl.innerHTML = 'Oooops...No result for your request!!!';
-    const divPagination = document.querySelector('#pagination');
-    divPagination.classList.add('pagination-none');
-
-    const errorInLibrary = document.createElement('p');
-    errorInLibrary.textContent = 'Oooops...No result for your request!!!';
-    renderUl.style.fontSize = '50px';
-    renderUl.style.marginTop = '100px';
-
-    console.log(errorInLibrary);
-    divPagination.innerHTML = ' ';
-  }
-}
-
-function renderFilmsWatched() {
-  // const watchBtn = document.querySelector('#watched-btn');
-  // watchBtn.classList.add('isActive');
-  // const queueBtn = document.querySelector('#watch-later-btn');
-  // queueBtn.classList.remove('isActive');
-
-  let libraryWatchList = [];
-  let localStorageInfoList = localStorage.getItem('watched');
-  if (localStorageInfoList !== null) {
-    libraryWatchList.push(...storageMethods.load('watched'));
-    const divPagination = document.querySelector('#pagination');
-    divPagination.classList.add('pagination-none');
-    divPagination.innerHTML = ' ';
-
-    const murkup = libraryWatchList.map(card => listItemTemplate(card));
-    const renderUl = document.querySelector('.js-gallery_list');
-    renderUl.innerHTML = murkup;
-  } else {
-    const renderUl = document.querySelector('.js-gallery_list');
-    renderUl.innerHTML = 'Oooops...No result for your request!!!';
-    const divPagination = document.querySelector('#pagination');
-    divPagination.classList.add('pagination-none');
-
-    const errorInLibrary = document.createElement('p');
-    errorInLibrary.textContent = 'Oooops...No result for your request!!!';
-    renderUl.style.fontSize = '50px';
-    renderUl.style.marginTop = '100px';
-
-    console.log(errorInLibrary);
-    divPagination.innerHTML = ' ';
-  }
 }
 
 function logoClickHandler() {
