@@ -4,6 +4,7 @@
 @import '../components/searchForm/searchForm.css';
 @import '../components/searchBtn/searchBtn.css';
 @import '../components/mainFilmsList/galleryList.css';
+@import '../components/team/footter.css';
 
 html {
   box-sizing: border-box;
@@ -177,7 +178,7 @@ button:focus {
 .noResult_image {
   width: 100%;
   height: auto;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 @media (min-width: 768px) {
