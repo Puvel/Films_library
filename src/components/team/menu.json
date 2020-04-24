@@ -1,0 +1,115 @@
+[
+    {
+   
+    "name": "Liza Domasheva",
+    "position": "Front End Developer",
+    "image":"../assets/images/team/Liza1",
+    "email":"lizidomasheva@gmail.com",
+    "sociallist":[
+        "https://www.instagram.com/lizi_domasheva/",
+        "#",
+        "https://www.linkedin.com/in/yelyzaveta-domasheva/"
+    ]
+    
+  },
+
+  {
+    
+    "name": "Pavlo Chenchovyi",
+    "position": "Team Lead",
+    "image":"../assets/images/team/Liza1",
+    "email":"puvelko@gmail.com",
+    "sociallist":[
+        "https://www.instagram.com/irynailina/",
+        "#",
+        "#"
+    ]
+    
+  },
+
+  {
+ 
+    "name": "Kateryna Myronova",
+    "position": "Scrum Master",
+    "image":"../assets/images/team/Katya",
+    "email":"katrin.myronova@gmail.com",
+    "sociallist":[
+        "https://www.instagram.com/katrusya_a/",
+        "#",
+        "#"
+    ]
+    
+  },
+
+  {
+   
+    "name": "Natasha Maydannik",
+    "position": "Front End Developer",
+    "image":"../assets/images/team/Natasha1",
+    "email":"nattuardy@gmail.com",
+    "sociallist":[
+        "#",
+        "#",
+        "#"
+    ]
+    
+  },
+
+  {
+    
+    "name": "Iryna Ilina",
+    "position": "Front End Developer",
+    "image":"../assets/images/team/Ira2",
+    "email":"irynailina@gmail.com",
+    "sociallist":[
+        "https://www.instagram.com/irynailina/",
+        "#",
+        "https://www.linkedin.com/in/iryna-ilina-55564492/"
+    ]
+    
+  },
+
+  {
+    
+    "name": "Olia Melnyk",
+    "position": "Front End Developer",
+    "image":"../assets/images/team/Olia",
+    "email":"olgamelnyk10111989@gmail.com",
+    "sociallist":[
+        "https://www.instagram.com/olia_melnyk_/",
+        "#",
+        "#"
+    ]
+    
+  },
+
+  {
+    
+    "name": "Fahriddin",
+    "position": "Front End Developer",
+    "image":"../assets/images/team/Fahriddin1",
+    "email":"irynailina@gmail.com",
+    "sociallist":[
+        "https://www.instagram.com/nomanjanov_07/",
+        "#",
+        "#"
+    ]
+    
+  },
+
+  {
+    
+    "name": "Mykhaylo Dyatel",
+    "position": "Front End Developer",
+    "image":"../assets/images/team/Misha",
+    "email":"irynailina@gmail.com",
+    "sociallist":[
+        "https://www.instagram.com/misha/",
+        "#",
+        "#"
+    ]
+    
+  }
+
+]
+
