@@ -1,13 +1,13 @@
 import '../../stylesheet/main.css';
 import '../pagination/pagination.css';
-import {
-  renderWatchedAndQueueGalleryList,
-  renderSearchResultGalleryList,
-} from '../mainFilmsList/mainFilmsList';
+import { renderSearchResultGalleryList } from '../mainFilmsList/mainFilmsList';
 import searchButtons from '../../templates/searchBtn.hbs';
 import searchForm from '../../templates/searchForm.hbs';
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
-import { renderHomeGalleryList } from '../mainFilmsList/mainFilmsList';
+import {
+  renderHomeGalleryList,
+  renderPrevGalleryList,
+} from '../mainFilmsList/mainFilmsList';
 import fetchFunction from '../../services/services';
 import { hundleSubmit } from '../searchForm/searchForm';
 import {
@@ -15,6 +15,8 @@ import {
   renderFilmsWatched,
 } from '../localStorage/renderFilmsLS';
 import storageMethods from '../localStorage/storageMethods';
+import services from '../../services/services';
+import { init } from '../pagination/pagination';
 
 const navMenu = document.querySelector('.nav__home');
 const logoLink = document.querySelector('.nav__logo');
@@ -55,10 +57,10 @@ function navClickHandler(e) {
     const input = document.querySelector('.search-form_input');
     input.value = fetchFunction.searchQuery;
   } else {
-    renderHomeGalleryList();
+    renderPrevGalleryList();
   }
   refs.formSearch = document.querySelector('#js-form');
-  refs.formSearch.addEventListener('input', hundleSubmit);
+  refs.formSearch.addEventListener('submit', hundleSubmit);
 }
 
 refs.libraryLink.addEventListener('click', renderWatchedAndQueueCollection);
@@ -76,7 +78,10 @@ function renderWatchedAndQueueCollection(e) {
   refs.headerInput.classList.add('unvisible');
   const markup = searchButtons();
   refs.headerBtn.innerHTML = markup;
-
+  refs.cardItem = document.querySelector('.js-ardItem');
+  if (refs.cardItem) {
+    refs.cardItem.remove();
+  }
   renderFilmsQueue();
 
   const watchBtn = document.querySelector('#watched-btn');
@@ -98,9 +103,13 @@ function logoClickHandler() {
     refs.cardItem.remove();
   }
 
+  services.page = 1;
   renderHomeGalleryList();
+  // const divPagination = document.querySelector('#pagination');
+  // divPagination.classList.remove('pagination-none');
+
   refs.activeLinkLibrary.classList.remove('nav__btn--active');
   refs.activeLink.classList.add('nav__btn--active');
   refs.formSearch = document.querySelector('#js-form');
-  refs.formSearch.addEventListener('input', hundleSubmit);
+  refs.formSearch.addEventListener('submit', hundleSubmit);
 }
