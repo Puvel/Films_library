@@ -102,8 +102,6 @@ function logoClickHandler() {
 
   services.page = 1;
   renderHomeGalleryList();
-  // const divPagination = document.querySelector('#pagination');
-  // divPagination.classList.remove('pagination-none');
 
   refs.activeLinkLibrary.classList.remove('nav__btn--active');
   refs.activeLink.classList.add('nav__btn--active');
