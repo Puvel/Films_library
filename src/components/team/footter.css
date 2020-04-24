@@ -1,7 +1,7 @@
-.pic {
+/* .pic {
   background-image: url(../../assets/images/team/Ira2.JPG);
   
-}
+} */
 .cards {
   padding: 50px 0 50px 0;
   background-color: var(--footer-bg-color);
@@ -36,7 +36,7 @@
 .services-item .content .services-item__title{
   margin: 0 0 18px;
   display: block;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 600;
   font-family: var(--main-font);
 }
@@ -91,7 +91,7 @@
   text-align: center;
   color: var(--main-decoration-color);
   margin-bottom: 50px;
-  font-size: 30px;
+  font-size: 24px;
   text-transform: uppercase;
 }
 
@@ -133,6 +133,10 @@
 
     border-radius: 50%;
   }
+  
+  /* .services_title {
+    font-size: 38px;
+  } */
 }
 
 @media (min-width: 768px) {
