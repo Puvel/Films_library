@@ -13,25 +13,27 @@ export function renderFilmsQueue() {
 
   let libraryQueueList = [];
   let localStorageInfoList = storageMethods.load('queue');
-
+  
   if (localStorageInfoList && localStorageInfoList.length !== 0) {
+    
     libraryQueueList.push(...storageMethods.load('queue'));
-    const divPagination = document.querySelector('#pagination');
-
-    divPagination.innerHTML = ' ';
+    // const divPagination = document.querySelector('#pagination');
+    // divPagination.innerHTML = ' ';
 
     const murkup = libraryQueueList
       .map(card => listItemTemplate(card))
       .join('');
     const renderUl = document.querySelector('.js-gallery_list');
     renderUl.innerHTML = murkup;
-  } else {
+    
+  }
+  else {
     const renderUl = document.querySelector('.js-gallery_list');
     renderUl.innerHTML = noResultLibrary({ noRes });
     const divPagination = document.querySelector('#pagination');
     divPagination.style.padding = 0;
     divPagination.innerHTML = ' ';
-  }
+  } 
 }
 
 export function renderFilmsWatched() {
@@ -44,7 +46,6 @@ export function renderFilmsWatched() {
   let localStorageInfoList = storageMethods.load('watched');
   if (localStorageInfoList && localStorageInfoList.length !== 0) {
     libraryWatchList.push(...storageMethods.load('watched'));
-
     const murkup = libraryWatchList
       .map(card => listItemTemplate(card))
       .join('');
@@ -59,3 +60,5 @@ export function renderFilmsWatched() {
     divPagination.innerHTML = ' ';
   }
 }
+
+
