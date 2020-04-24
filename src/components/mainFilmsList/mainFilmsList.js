@@ -32,6 +32,7 @@ export function renderHomeGalleryList() {
         refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
         const arrow = document.querySelector('.arrow');
         arrow.addEventListener('click', Pagination.Next);
+
       }
       // services.page = 1
     })
@@ -164,4 +165,11 @@ function markup(films) {
     })
     .join('');
   return ul;
+}
+
+function scroll() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 }
