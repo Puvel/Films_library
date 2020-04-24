@@ -94,6 +94,11 @@
   color: var(--main-dark-color);
 }
 
+.cardItem__listButton {
+  display: flex;
+  text-align: center;
+}
+
 .cardItem__button {
   padding: 0 15px;
   font-size: 12px;
@@ -106,6 +111,11 @@
   border: 1px solid var(--main-dark-color);
   background-color: var(--main-light-color);
   border-radius: 5px;
+  width: 134px;
+}
+
+#js-WatchedButton {
+  margin-right: 8px;
 }
 
 .cardItem__button:hover {
@@ -163,5 +173,9 @@
   .cardItem__genreList {
 
     width: 290px;
+  }
+
+  .cardItem__button {
+    width: 170px;
   }
 }
