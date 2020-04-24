@@ -1,4 +1,5 @@
 import { init } from '../components/pagination/pagination';
+import { fatchStatus } from './fatchStatus';
 const baseUrl = 'https://api.themoviedb.org/3';
 const apiKey = 'a2c80789bced092c10745aa4387db8d2';
 const movieSearchUrl = '/search/movie';
@@ -12,7 +13,7 @@ export default {
   fetchMoviesSearchApi() {
     const movieSearchPrmts = `?api_key=${apiKey}&language=en-US&query=${this.query}&page=${this.page}&per_page=20&include_adult=false`;
     return fetch(baseUrl + movieSearchUrl + movieSearchPrmts)
-      .then(res => res.json())
+      .then(res => fatchStatus(res))
       .then(data => {
         this.totalPages = data.total_pages;
         init();
@@ -32,7 +33,7 @@ export default {
   fetchGenresListApi() {
     const genresListPrmts = `?api_key=${apiKey}&language=en-US`;
     return fetch(baseUrl + genresListUrl + genresListPrmts)
-      .then(res => res.json())
+      .then(res => fatchStatus(res))
       .then(data => {
         return data.genres;
       })
@@ -42,7 +43,7 @@ export default {
   fetchMovieCardApi(movieId) {
     const movieCardPrmts = `/movie/${movieId}?api_key=${apiKey}&language=en-US`;
     return fetch(baseUrl + movieCardPrmts)
-      .then(res => res.json())
+      .then(res => fatchStatus(res))
       .then(data => {
         return data;
       })
@@ -52,7 +53,7 @@ export default {
   fetchPopularityApi() {
     const popularityPrmts = `?api_key=${apiKey}&language=en-US&page=${this.page}`;
     return fetch(baseUrl + popularityUrl + popularityPrmts)
-      .then(res => res.json())
+      .then(res => fatchStatus(res))
 
       .then(data => {
         this.totalPages = data.total_pages;
