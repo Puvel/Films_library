@@ -31,7 +31,7 @@
  
     "name": "Kateryna Myronova",
     "position": "Scrum Master",
-   
+    "image":"../assets/images/team/Katya",
     "email":"katrin.myronova@gmail.com",
     "sociallist":[
         "https://www.instagram.com/katrusya_a/",
@@ -45,7 +45,7 @@
    
     "name": "Natasha Maydannik",
     "position": "Front End Developer",
-   
+    "image":"../assets/images/team/Natasha1",
     "email":"nattuardy@gmail.com",
     "sociallist":[
         "#",
@@ -59,7 +59,7 @@
     
     "name": "Iryna Ilina",
     "position": "Front End Developer",
-   
+    "image":"../assets/images/team/Ira2",
     "email":"irynailina@gmail.com",
     "sociallist":[
         "https://www.instagram.com/irynailina/",
@@ -71,9 +71,9 @@
 
   {
     
-    "name": "Olia Melnyk<",
+    "name": "Olia Melnyk",
     "position": "Front End Developer",
-  
+    "image":"../assets/images/team/Olia",
     "email":"olgamelnyk10111989@gmail.com",
     "sociallist":[
         "https://www.instagram.com/olia_melnyk_/",
@@ -85,9 +85,9 @@
 
   {
     
-    "name": "Fahriddin<",
+    "name": "Fahriddin",
     "position": "Front End Developer",
-   
+    "image":"../assets/images/team/Fahriddin1",
     "email":"irynailina@gmail.com",
     "sociallist":[
         "https://www.instagram.com/nomanjanov_07/",
@@ -99,9 +99,9 @@
 
   {
     
-    "name": "Mykhaylo Dyatel<",
+    "name": "Mykhaylo Dyatel",
     "position": "Front End Developer",
-   
+    "image":"../assets/images/team/Misha",
     "email":"irynailina@gmail.com",
     "sociallist":[
         "https://www.instagram.com/misha/",

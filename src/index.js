@@ -7,3 +7,4 @@ import './components/mainFilmsList/mainFilmsList.js';
 import './components/searchForm/searchForm';
 import './components/localStorage/localStorage';
 import './components/team/footter';
+import 'basiclightbox/dist/basicLightbox.min.css';

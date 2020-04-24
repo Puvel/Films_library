@@ -1,55 +1,7 @@
-@import url(./fonts.css);
-@import url(./vars.css);
-
-html {
-  box-sizing: border-box;
+.pic {
+  background-image: url(../../assets/images/team/Ira2.JPG);
+  
 }
-
-body {
-  font-family: var(--font-main);
-  font-size: var(--main-font-size);
-  letter-spacing: 1px;
-  line-height: 16px;
-  /* margin-top:50px!important; */
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-​img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-button:focus {
-  outline: none;
-}
-
-.container {
-  width: 280px;
-  margin: 0 auto;
-}
-/* ///////////// SECTION ///////////////// */
-
 .cards {
   padding: 50px 0 50px 0;
   background-color: var(--footer-bg-color);
