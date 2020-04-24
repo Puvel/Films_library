@@ -4,6 +4,7 @@
 @import '../components/searchForm/searchForm.css';
 @import '../components/searchBtn/searchBtn.css';
 @import '../components/mainFilmsList/galleryList.css';
+@import '../components/team/footter.css';
 
 html {
   box-sizing: border-box;
@@ -136,30 +137,6 @@ button:focus {
   display: block;
 }
 
-.main_footer {
-  padding: 32px 0 34px 0;
-  background-color: var(--footer-bg-color);
-}
-
-.footer__description {
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 400;
-  padding: 0 40px;
-  margin: 0 auto;
-  text-align: center;
-  line-height: 24px;
-}
-
-.footer-description__icon {
-  margin-bottom: -03px;
-}
-
-.footer-description__link {
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 400;
-  text-decoration: underline;
-}
-
 .main__content {
   padding-bottom: 30px;
 }
@@ -177,7 +154,6 @@ button:focus {
 .noResult_image {
   width: 100%;
   height: auto;
-  margin-bottom: 30px;
 }
 
 @media (min-width: 768px) {

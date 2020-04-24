@@ -1,8 +1,9 @@
 import '../../stylesheet/main.css';
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
 import storageMethods from '../localStorage/storageMethods';
-// import noResult from '../../templates/noResult.hbs';
-// import noRes from '../../assets/images/noResult.jpg';
+import noResultLibrary from '../../templates/noResultLibrary.hbs';
+import noRes from '../../assets/images/noResult.jpg';
+import { init } from '../pagination/pagination';
 
 export function renderFilmsQueue() {
   const queueBtn = document.querySelector('#watch-later-btn');
@@ -26,15 +27,9 @@ export function renderFilmsQueue() {
     renderUl.innerHTML = murkup;
   } else {
     const renderUl = document.querySelector('.js-gallery_list');
-    renderUl.innerHTML = 'Oooops...No result for your request!!!';
+    renderUl.innerHTML = noResultLibrary({ noRes });
     const divPagination = document.querySelector('#pagination');
-
-
-
-    const errorInLibrary = document.createElement('p');
-    errorInLibrary.textContent = 'Oooops...No result for your request!!!';
-    renderUl.style.fontSize = '50px';
-    renderUl.style.marginTop = '100px';
+    divPagination.style.padding = 0;
     divPagination.innerHTML = ' ';
   }
 }
@@ -49,33 +44,18 @@ export function renderFilmsWatched() {
   let localStorageInfoList = storageMethods.load('watched');
   if (localStorageInfoList && localStorageInfoList.length !== 0) {
     libraryWatchList.push(...storageMethods.load('watched'));
-    const divPagination = document.querySelector('#pagination');
 
-    divPagination.innerHTML = ' ';
-
-    const murkup = libraryWatchList.map(card => listItemTemplate(card)).join('');
+    const murkup = libraryWatchList
+      .map(card => listItemTemplate(card))
+      .join('');
 
     const renderUl = document.querySelector('.js-gallery_list');
     renderUl.innerHTML = murkup;
   } else {
     const renderUl = document.querySelector('.js-gallery_list');
-    renderUl.innerHTML = 'Oooops...No result for your request!!!';
+    renderUl.innerHTML = noResultLibrary({ noRes });
     const divPagination = document.querySelector('#pagination');
-
-
-    const errorInLibrary = document.createElement('p');
-    errorInLibrary.textContent = 'Oooops...No result for your request!!!';
-    renderUl.style.fontSize = '50px';
-    renderUl.style.marginTop = '100px';
-
+    divPagination.style.padding = 0;
     divPagination.innerHTML = ' ';
   }
 }
-
-
-// import noResult from './templates/noResult.hbs';
-// import noRes from './assets/images/noResult.jpg';
-// const refs = {
-//   mainSection: document.querySelector('.main_section'),
-// };
-// refs.mainSection.insertAdjacentHTML('afterbegin', noResult({ noRes }));

@@ -1,12 +1,10 @@
 import apiServicesFetch from '../../services/services';
 import libraryListItemTemplate from '../../templates/libraryListItemTemplate.hbs';
-import listItemTemplate from '../../templates/listItemTamplate.hbs';
-import Pagination, { init } from '../pagination/pagination';
+import Pagination from '../pagination/pagination';
 import notFoundImg from '../../assets/images/notFound.jpg';
 import spinner from '../spinner/spinner';
 import noResult from '../../templates/noResult.hbs';
 import noRes from '../../assets/images/noResult.jpg';
-import services from '../../services/services';
 
 const refs = {
   mainSection: document.querySelector('.main_section'),
@@ -34,7 +32,6 @@ export function renderHomeGalleryList() {
         arrow.addEventListener('click', Pagination.Next);
 
       }
-      // services.page = 1
     })
     .catch(err => console.log(err));
 }
@@ -54,34 +51,6 @@ export function renderPrevGalleryList() {
         arrow.addEventListener('click', Pagination.Next);
       }
     })
-    .catch(err => console.log(err));
-}
-
-export function renderWatchedAndQueueGalleryList() {
-  spinner.show();
-  Promise.all([
-    apiServicesFetch.fetchPopularityApi(),
-    apiServicesFetch.fetchGenresListApi(),
-  ])
-    .then(result => {
-      spinner.hide();
-      getResultFromFetchApi(result);
-      const films = [...result[0]];
-      function markup(films) {
-        const ul = films
-          .map(item => {
-            const changeItem = {
-              ...item,
-              release_date: item.release_date.slice(0, 4),
-            };
-            return listItemTemplate(changeItem);
-          })
-          .join('');
-        return ul;
-      }
-      refs.galleryList.innerHTML = markup(films);
-    })
-
     .catch(err => console.log(err));
 }
 
