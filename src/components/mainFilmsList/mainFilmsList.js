@@ -1,11 +1,12 @@
 import apiServicesFetch from '../../services/services';
 import libraryListItemTemplate from '../../templates/libraryListItemTemplate.hbs';
 import listItemTemplate from '../../templates/listItemTamplate.hbs';
-import Pagination from '../pagination/pagination';
+import Pagination, { init } from '../pagination/pagination';
 import notFoundImg from '../../assets/images/notFound.jpg';
 import spinner from '../spinner/spinner';
 import noResult from '../../templates/noResult.hbs';
 import noRes from '../../assets/images/noResult.jpg';
+import services from '../../services/services';
 
 const refs = {
   mainSection: document.querySelector('.main_section'),
@@ -24,6 +25,25 @@ export function renderHomeGalleryList() {
   ])
     .then(result => {
       spinner.hide();
+      getResultFromFetchApi(result);
+      const films = [...result[0]];
+      refs.galleryList.innerHTML = markup(films);
+      if (films.length % 2 === 0) {
+        refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
+        const arrow = document.querySelector('.arrow');
+        arrow.addEventListener('click', Pagination.Next);
+      }
+      // services.page = 1
+    })
+    .catch(err => console.log(err));
+}
+
+export function renderPrevGalleryList() {
+  Promise.all([
+    apiServicesFetch.fetchPopularityApi(),
+    apiServicesFetch.fetchGenresListApi(),
+  ])
+    .then(result => {
       getResultFromFetchApi(result);
       const films = [...result[0]];
       refs.galleryList.innerHTML = markup(films);
@@ -72,13 +92,24 @@ export function renderSearchResultGalleryList() {
   ])
     .then(result => {
       spinner.hide();
-      getResultFromFetchApi(result);
-      const films = [...result[0]];
-      refs.galleryList.innerHTML = markup(films);
-      if (films.length % 2 === 0) {
-        refs.galleryList.insertAdjacentHTML('beforeend', nextButtonTemplate());
-        const arrow = document.querySelector('.arrow');
-        arrow.addEventListener('click', Pagination.Next);
+      if (result[0].length !== 0) {
+        getResultFromFetchApi(result);
+        const films = [...result[0]];
+        refs.galleryList.innerHTML = markup(films);
+        if (films.length % 2 === 0) {
+          refs.galleryList.insertAdjacentHTML(
+            'beforeend',
+            nextButtonTemplate(),
+          );
+          const arrow = document.querySelector('.arrow');
+          arrow.addEventListener('click', Pagination.Next);
+        }
+      } else {
+        document.querySelector('#pagination').innerHTML = '';
+        document.querySelector('.js-gallery_list').innerHTML = noResult({
+          noRes,
+        });
+        return;
       }
     })
     .catch(err => console.log(err));
@@ -89,13 +120,17 @@ function getResultFromFetchApi(result) {
   const ganres = result[1];
   films.map(item => {
     const ganArr = item.genre_ids;
-    const ganName = ganArr.map(gan => {
-      const currGan = ganres.find(ganr => ganr.id === gan);
-      return currGan.name;
-    });
-    const genreList = ganName.toString().replace(/,/g, ', ');
+    if (ganArr.length !== 0) {
+      const ganName = ganArr.map(gan => {
+        const currGan = ganres.find(ganr => ganr.id === gan);
+        return currGan.name;
+      });
+      const genreList = ganName.toString().replace(/,/g, ', ');
 
-    return (item.genre_ids = genreList);
+      return (item.genre_ids = genreList);
+    } else {
+      return item.genre_ids.push('unknown');
+    }
   });
 }
 
