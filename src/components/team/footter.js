@@ -65,17 +65,17 @@ const markup = `<section class="cards">
         <p class="services-item__email">puvelko@gmail.com</p>                  
         <ul class="social">
         <li class="cl_li">
-            <a href="https://www.instagram.com/olia_melnyk_/" class="fa fa-facebook">
+            <a target="_blank" href="#" class="fa fa-facebook">
                 <img class="" src="${insta}" width="36" height="16" alt="image description">
             </a>
         </li>
         <li class="cl_li">
-            <a href="https://www.facebook.com/olya.melnik.336" class="fa fa-twitter">
+            <a target="_blank" href="#" class="fa fa-twitter">
                 <img class="" src="${fb}" width="16" height="16" alt="image description">
             </a>
         </li>
         <li class="cl_li">
-            <a href="#" class="fa fa-linkedin">
+            <a target="_blank" href="#" class="fa fa-linkedin">
                 <img class="" src="${linkedin}" width="16" height="16" alt="image description">
             </a>
         </li>
@@ -93,17 +93,17 @@ const markup = `<section class="cards">
                 <p class="services-item__email">lizidomasheva@gmail.com</p>                  
                 <ul class="social">
             <li class="cl_li">
-                <a href="https://www.instagram.com/olia_melnyk_/" class="fa fa-facebook">
+                <a target="_blank" href="https://www.instagram.com/lizi_domasheva/" class="fa fa-facebook">
                     <img class="" src="${insta}" width="36" height="16" alt="">
                 </a>
             </li>
             <li class="cl_li">
-                <a href="https://www.facebook.com/olya.melnik.336" class="fa fa-twitter">
+                <a target="_blank" href="https://www.facebook.com/elizaveta.domasheva" class="fa fa-twitter">
                     <img class="" src="${fb}" width="16" height="16" alt="">
                 </a>
             </li>
             <li class="cl_li">
-                <a href="#" class="fa fa-linkedin">
+                <a target="_blank" href="https://www.linkedin.com/in/yelyzaveta-domasheva/" class="fa fa-linkedin">
                     <img class="" src="${linkedin}" width="16" height="16" alt="">
                 </a>
             </li>
@@ -124,17 +124,17 @@ const markup = `<section class="cards">
                 <p class="services-item__email">katrin.myronova@gmail.com</p>                  
                 <ul class="social">
             <li class="cl_li">
-                <a href="https://www.instagram.com/olia_melnyk_/" class="fa fa-facebook">
+                <a target="_blank" href="https://www.instagram.com/katrusya_a/" class="fa fa-facebook">
                     <img class="" src="${insta}" width="36" height="16" alt="image description">
                 </a>
             </li>
             <li class="cl_li">
-                <a href="https://www.facebook.com/olya.melnik.336" class="fa fa-twitter">
+                <a target="_blank" href="https://www.facebook.com/katrin.mironova.18" class="fa fa-twitter">
                     <img class="" src="${fb}" width="16" height="16" alt="image description">
                 </a>
             </li>
             <li class="cl_li">
-                <a href="#" class="fa fa-linkedin">
+                <a target="_blank" href="https://www.linkedin.com/in/kateryna-myronova-7697bb1a/" class="fa fa-linkedin">
                     <img class="" src="${linkedin}" width="16" height="16" alt="image description">
                 </a>
             </li>
@@ -153,17 +153,17 @@ const markup = `<section class="cards">
                 <p class="services-item__email">nattuardy@gmail.com</p>                 
                 <ul class="social">
                 <li class="cl_li">
-                    <a href="https://www.instagram.com/olia_melnyk_/" class="fa fa-facebook">
+                    <a target="_blank" href="#" class="fa fa-facebook">
                         <img class="" src="${insta}" width="36" height="16" alt="image description">
                     </a>
                 </li>
                 <li class="cl_li">
-                    <a href="https://www.facebook.com/olya.melnik.336" class="fa fa-twitter">
+                    <a target="_blank" href="#" class="fa fa-twitter">
                         <img class="" src="${fb}" width="16" height="16" alt="image description">
                     </a>
                 </li>
                 <li class="cl_li">
-                    <a href="#" class="fa fa-linkedin">
+                    <a target="_blank" href="#" class="fa fa-linkedin">
                         <img class="" src="${linkedin}" width="16" height="16" alt="image description">
                     </a>
                 </li>
@@ -181,17 +181,17 @@ const markup = `<section class="cards">
                 <p class="services-item__email">irynailina@gmail.com</p>                 
                 <ul class="social">
                 <li class="cl_li">
-                    <a href="https://www.instagram.com/olia_melnyk_/" class="fa fa-facebook">
+                    <a target="_blank" href="https://www.instagram.com/irynailina/" class="fa fa-facebook">
                         <img class="" src="${insta}" width="36" height="16" alt="image description">
                     </a>
                 </li>
                 <li class="cl_li">
-                    <a href="https://www.facebook.com/olya.melnik.336" class="fa fa-twitter">
+                    <a target="_blank" href="https://www.facebook.com/irene.ilina/" class="fa fa-twitter">
                         <img class="" src="${fb}" width="16" height="16" alt="image description">
                     </a>
                 </li>
                 <li class="cl_li">
-                    <a href="#" class="fa fa-linkedin">
+                    <a target="_blank" href="https://www.linkedin.com/in/iryna-ilina-55564492/" class="fa fa-linkedin">
                         <img class="" src="${linkedin}" width="16" height="16" alt="image description">
                     </a>
                 </li>
@@ -210,17 +210,17 @@ const markup = `<section class="cards">
                 <p class="services-item__email">olgamelnyk10111989@gmail.com</p>                  
                 <ul class="social">
                 <li class="cl_li">
-                    <a href="https://www.instagram.com/olia_melnyk_/" class="fa fa-facebook">
+                    <a target="_blank" href="https://www.instagram.com/olia_melnyk_/" class="fa fa-facebook">
                         <img class="" src="${insta}" width="36" height="16" alt="image description">
                     </a>
                 </li>
                 <li class="cl_li">
-                    <a href="https://www.facebook.com/olya.melnik.336" class="fa fa-twitter">
+                    <a target="_blank" href="https://www.facebook.com/olya.melnik.336" class="fa fa-twitter">
                         <img class="" src="${fb}" width="16" height="16" alt="image description">
                     </a>
                 </li>
                 <li class="cl_li">
-                    <a href="#" class="fa fa-linkedin">
+                    <a target="_blank" href="#" class="fa fa-linkedin">
                         <img class="" src="${linkedin}" width="16" height="16" alt="image description">
                     </a>
                 </li>
@@ -240,17 +240,17 @@ const markup = `<section class="cards">
                 <p class="services-item__email">fahriddinnomanjanov@gmail.com</p>                  
                 <ul class="social">
                 <li class="cl_li">
-                    <a href="https://www.instagram.com/olia_melnyk_/" class="fa fa-facebook">
+                    <a target="_blank" href="https://www.instagram.com/nomanjanov_07/" class="fa fa-facebook">
                         <img class="" src="${insta}" width="36" height="16" alt="image description">
                     </a>
                 </li>
                 <li class="cl_li">
-                    <a href="https://www.facebook.com/olya.melnik.336" class="fa fa-twitter">
+                    <a target="_blank" href="https://www.facebook.com/fahriddin.nomanjanov" class="fa fa-twitter">
                         <img class="" src="${fb}" width="16" height="16" alt="image description">
                     </a>
                 </li>
                 <li class="cl_li">
-                    <a href="#" class="fa fa-linkedin">
+                    <a target="_blank" href="https://www.linkedin.com/in/fahriddin-nomanjanov-5958551a3/" class="fa fa-linkedin">
                         <img class="" src="${linkedin}" width="16" height="16" alt="image description">
                     </a>
                 </li>
@@ -269,17 +269,17 @@ const markup = `<section class="cards">
                 <p class="services-item__email">misha.dyatel@gmail.com</p>                  
                 <ul class="social">
                 <li class="cl_li">
-                    <a href="https://www.instagram.com/olia_melnyk_/" class="fa fa-facebook">
+                    <a target="_blank" href="https://www.instagram.com/mishadyatel/" class="fa fa-facebook">
                         <img class="" src="${insta}" width="36" height="16" alt="image description">
                     </a>
                 </li>
                 <li class="cl_li">
-                    <a href="https://www.facebook.com/olya.melnik.336" class="fa fa-twitter">
+                    <a target="_blank" href="https://www.facebook.com/misha.dyatel" class="fa fa-twitter">
                         <img class="" src="${fb}" width="16" height="16" alt="image description">
                     </a>
                 </li>
                 <li class="cl_li">
-                    <a href="#" class="fa fa-linkedin">
+                    <a target="_blank" href="#" class="fa fa-linkedin">
                         <img class="" src="${linkedin}" width="16" height="16" alt="image description">
                     </a>
                 </li>
