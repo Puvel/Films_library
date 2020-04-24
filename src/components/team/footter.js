@@ -1,4 +1,3 @@
-import * as basicLightbox from 'basiclightbox'
 import items from '../team/menu.json';
 import './footter.css'
 import teamCardTemplate from '../../templates/footter-item.hbs';

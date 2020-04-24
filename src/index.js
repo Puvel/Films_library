@@ -1,7 +1,4 @@
 import './stylesheet/main.css';
-import './components/cardItem/cardItem.css';
-import './components/spinner/spinner.css'
-import 'basiclightbox/dist/basicLightbox.min.css';
 import './components/Navigation/navigation';
 import './components/pagination/pagination.js';
 import './components/cardItem/cardItem';

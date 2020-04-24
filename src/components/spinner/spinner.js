@@ -1,3 +1,4 @@
+import './spinner.css'
 const spinner = document.querySelector('#spinner');
 
 export default {
