@@ -1,5 +1,5 @@
-import searchBtn from '../../templates/searchBtn.hbs';
 import './searchBtn.css';
+import searchBtn from '../../templates/searchBtn.hbs';
 
 
 const refs = {

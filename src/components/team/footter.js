@@ -1,5 +1,5 @@
 import items from '../team/menu.json';
-import './footter.css'
+import './footter.css';
 import teamCardTemplate from '../../templates/footter-item.hbs';
 import Pasha from '../../assets/images/team/Pasha.jpg';
 import Liza from '../../assets/images/team/Liza1.jpg';
@@ -14,39 +14,40 @@ import insta from '../../assets/images/icons/instagram.svg';
 import linkedin from '../../assets/images/icons/linkedin-logo.svg';
 
 const refs = {
-    mainHeaderBg: document.querySelector('.main_header-bg'),
-    headerInput: document.querySelector('.search-form_wrapper'),
-    headerBtn: document.querySelector('.btn'),
-    activeLink: document.querySelector('.nav__home'),
-    activeLinkLibrary: document.querySelector('.nav__library'),
-    homeLink: document.querySelector('.nav__home'),
-    libraryLink: document.querySelector('.nav__library'),
-  };
+  mainHeaderBg: document.querySelector('.main_header-bg'),
+  headerInput: document.querySelector('.search-form_wrapper'),
+  headerBtn: document.querySelector('.btn'),
+  activeLink: document.querySelector('.nav__home'),
+  activeLinkLibrary: document.querySelector('.nav__library'),
+  homeLink: document.querySelector('.nav__home'),
+  libraryLink: document.querySelector('.nav__library'),
+};
 
-const teamMarkup = items.map(item => {
-return teamCardTemplate(item);
-}).join("");
+const teamMarkup = items
+  .map(item => {
+    return teamCardTemplate(item);
+  })
+  .join('');
 
-const list = document.querySelector(".footer-description__link");
+const list = document.querySelector('.footer-description__link');
 
-list.addEventListener('click', showCards)
+list.addEventListener('click', showCards);
 
 function showCards() {
-    const galleryList = document.querySelector('.js-gallery_list')
-    galleryList.innerHTML = markup;
-    const divPagination = document.querySelector('#pagination');
-    divPagination.style.padding = 0;
-    divPagination.innerHTML = ' ';
-    const cardItem = document.querySelector('.js-cardItem')
-    cardItem.innerHTML = "";
-    refs.mainHeaderBg.classList.remove('main_header-bg');
-    refs.mainHeaderBg.classList.remove('main_header-bg-btn');
-    refs.mainHeaderBg.classList.add('main_header-bg-card');
-    refs.headerInput.innerHTML = '';
-    refs.headerBtn.innerHTML = '';
-    refs.activeLinkLibrary.classList.remove('nav__btn--active');
-    refs.activeLink.classList.remove('nav__btn--active');
-    
+  const galleryList = document.querySelector('.js-gallery_list');
+  galleryList.innerHTML = markup;
+  const divPagination = document.querySelector('#pagination');
+  divPagination.style.padding = 0;
+  divPagination.innerHTML = ' ';
+  const cardItem = document.querySelector('.js-cardItem');
+  cardItem.innerHTML = '';
+  refs.mainHeaderBg.classList.remove('main_header-bg');
+  refs.mainHeaderBg.classList.remove('main_header-bg-btn');
+  refs.mainHeaderBg.classList.add('main_header-bg-card');
+  refs.headerInput.innerHTML = '';
+  refs.headerBtn.innerHTML = '';
+  refs.activeLinkLibrary.classList.remove('nav__btn--active');
+  refs.activeLink.classList.remove('nav__btn--active');
 }
 
 const markup = `<section class="cards">
@@ -289,6 +290,4 @@ const markup = `<section class="cards">
 
     </ul>
 </div>
-</section>`
-
-
+</section>`;

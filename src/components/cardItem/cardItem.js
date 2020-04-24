@@ -1,5 +1,4 @@
 import './cardItem.css';
-import '../Navigation/navagationBackground.css';
 import services from '../../services/services';
 import filmCardTemplate from '../../templates/filmCardTemplate.hbs';
 import notFoundImg from '../../assets/images/notFound.jpg';

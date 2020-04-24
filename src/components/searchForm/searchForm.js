@@ -1,5 +1,5 @@
-import searchForm from '../../templates/searchForm.hbs';
 import './searchForm.css';
+import searchForm from '../../templates/searchForm.hbs';
 import apiServicesFetch from '../../services/services';
 import { renderSearchResultGalleryList } from '../mainFilmsList/mainFilmsList';
 

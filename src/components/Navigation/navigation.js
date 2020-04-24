@@ -1,9 +1,8 @@
-import '../../stylesheet/main.css';
-import '../pagination/pagination.css';
+// import '../../stylesheet/main.css';
+import './navagationBackground.css'
 import { renderSearchResultGalleryList } from '../mainFilmsList/mainFilmsList';
 import searchButtons from '../../templates/searchBtn.hbs';
 import searchForm from '../../templates/searchForm.hbs';
-import listItemTemplate from '../../templates/listItemTamplate.hbs';
 import {
   renderHomeGalleryList,
   renderPrevGalleryList,
@@ -14,9 +13,7 @@ import {
   renderFilmsQueue,
   renderFilmsWatched,
 } from '../localStorage/renderFilmsLS';
-import storageMethods from '../localStorage/storageMethods';
 import services from '../../services/services';
-import { init } from '../pagination/pagination';
 
 const navMenu = document.querySelector('.nav__home');
 const logoLink = document.querySelector('.nav__logo');
