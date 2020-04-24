@@ -110,18 +110,19 @@
   background-color: #f7f7f7;
 }
 
-.description{
+.footer__description {
   color: rgba(0, 0, 0, 0.8);
   font-weight: 400;
   padding: 0 40px;
   margin: 0 auto;
   text-align: center;
+  line-height: 24px;
 }
-.description__icon{
+.footer-description__icon{
   margin-bottom: -3px;
 }
   
-.description-link{
+.footer-description__link{
   color: rgba(0, 0, 0, 0.8);
   font-weight: 400;
   text-decoration: underline;

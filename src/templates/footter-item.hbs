@@ -1,23 +1,23 @@
-  <section class="cards">
-        <div class="container">
-            <ul class="services-list">
-                
-                <li class="services-item">
-                    <div class="pic">
-                        <img class="services-img" src="{{image}}" alt="bgbgb" width="260" height="300">
-                    </div>
-                    <div class="content">
-                        <h3 class="services-item__title">{{name}}</h3>
-                        <p class="services-item__description">{{position}}</p>
-                        <p class="services-item__email">{{email}}</p>
-                        <ul class="social">
-                            {{#each sociallist}}
-                            <li class="cl_li"><a href="{{this}}" class="fa fa-facebook"></a></li>
-                            {{/each}}
-                        </ul>
-                    </div>
-                   
-                </li>
-            </ul>
-        </div>
+<section class="cards">
+    <div class="container">
+        <ul class="services-list">
+
+            <li class="services-item">
+                <div class="pic">
+                    <img class="services-img" src="{{image}}" alt="bgbgb" width="260" height="300">
+                </div>
+                <div class="content">
+                    <h3 class="services-item__title">{{name}}</h3>
+                    <p class="services-item__description">{{position}}</p>
+                    <p class="services-item__email">{{email}}</p>
+                    <ul class="social">
+                        {{#each sociallist}}
+                        <li class="cl_li"><a href="{{this}}" class="fa fa-facebook"></a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+            </li>
+        </ul>
+    </div>
 </section>

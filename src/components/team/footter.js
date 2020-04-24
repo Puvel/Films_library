@@ -1,9 +1,10 @@
 import * as basicLightbox from 'basiclightbox'
 import items from '../team/menu.json';
+import './footter.css'
 import teamCardTemplate from '../../templates/footter-item.hbs';
 
 const teamMarkup = items.map(item => {
-   return teamCardTemplate(item);
+return teamCardTemplate(item);
 }).join("");
 
 const list = document.querySelector(".footer-description__link");
